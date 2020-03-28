@@ -1,5 +1,5 @@
 import React from 'react'
-import Footer from './Footer/Footer'
+import Footer from '../../components/Footer/Footer'
 import { Button } from '../../components'
 
 import './Home.less'
@@ -13,7 +13,9 @@ export default function Home(props: { img: { src: string; alt: string } }) {
         <h1 className="home-title">ReDark</h1>
         <p className="home-description">React 驱动的 UI 组件库</p>
         <p className="home-description">
-          <Button>快速开始</Button>
+          <Button type="success" size="large">
+            快速上手
+          </Button>
         </p>
       </section>
       <Footer text="MIT Licensed | Copyright © make heart by cjh" />
