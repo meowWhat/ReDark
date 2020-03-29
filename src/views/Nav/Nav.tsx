@@ -1,3 +1,6 @@
+/**
+ * @Nav 顶部导航栏
+ */
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import './Nav.less'
@@ -17,12 +20,11 @@ export default function Nav(props: {
         {nav.map((el, index) => {
           if (el.isStaticRouter === false) {
             return (
-              <a href={el.url} key={index} className="nav-item">
+              <a href={el.url} target="_blank" key={index} className="nav-item">
                 {el.text}
               </a>
             )
           }
-
           return (
             <NavLink
               to={el.url}

@@ -1,10 +1,25 @@
+/**
+ * @Button 按钮组件
+ */
 import React from 'react'
 import './Button.less'
 /**
  * tag : 2020/03/28
  * 未完成功能: loading , icon的支持
+ * @type 按钮的类型,主要区别为按钮的颜色
+ * @disabled 是否禁用按钮
+ * @href 是否启用按钮的link效果
+ * @target 启用link效果后的 链接行为
+ * @onClick 点击回调事件
+ * @loading -------未完成
+ * @shape 按钮形状
+ * @size  按钮大小
+ * @block 是否为块级按钮
+ * @children 按钮内的text内容
+ * @icon -----未完成
  */
-interface Options {
+
+interface Button {
   type?: 'primary' | 'danger' | 'success' | 'info' | 'warning' | 'secondary'
   disabled?: boolean
   href?: string
@@ -18,7 +33,7 @@ interface Options {
   icon?: boolean
 }
 
-export default function Button(props: Options) {
+export default function(props: Button) {
   const {
     onClick,
     type = 'primary',

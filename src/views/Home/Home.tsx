@@ -1,3 +1,6 @@
+/**
+ * @Home 首页
+ */
 import React from 'react'
 
 import { Button, Footer } from '../../components'

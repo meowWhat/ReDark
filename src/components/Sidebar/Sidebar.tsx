@@ -1,9 +1,15 @@
+/**
+ * @Sidebar 侧边栏
+ */
 import React from 'react'
 import './Sidebar.less'
 import SidebarGroup from './SidebarGroup/SidebarGroup'
 
+/**
+ * ---暂无参数
+ */
 const group = [
-  { url: '/docs/bb', text: 'Button', chineseText: '按钮' },
+  { url: '/docs/button', text: 'Button', chineseText: '按钮' },
   { url: '/docs/asd', text: 'nav', chineseText: '导航' },
   { url: '/docs/bsd', text: 'icon', chineseText: '图标' },
   { url: '/docs/qsd', text: 'BackTop', chineseText: '回到顶部' }

@@ -1,0 +1,42 @@
+.demo-box {
+  position: relative;
+  width: 100%;
+  border: 1px solid #ebebeb;
+  &:hover {
+    box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
+      0 2px 4px 0 rgba(232, 237, 250, 0.5);
+  }
+  .demo-box-component {
+    padding: 24px;
+  }
+  .demo-box-open {
+    width: auto;
+    height: 44px;
+    border-top: 1px solid #ebebeb;
+    text-align: center;
+    line-height: 44px;
+    color: #3eaf7c;
+    &:hover {
+      background: #f9fafc;
+      cursor: pointer;
+    }
+  }
+  .demo-box-hidden {
+    width: auto;
+    height: 44px;
+    border-top: 1px solid #ebebeb;
+    text-align: center;
+    line-height: 44px;
+    color: #3eaf7c;
+    position: sticky;
+    bottom: 0;
+    &:hover {
+      background: #f9fafc;
+      cursor: pointer;
+    }
+  }
+  .demo-box-code {
+    padding: 24px;
+    border-top: 1px solid #ebebeb;
+  }
+}

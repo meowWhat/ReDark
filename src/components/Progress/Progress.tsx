@@ -1,9 +1,16 @@
+/**
+ * @Progress 网站进度条
+ */
 import React, { createRef, useEffect } from 'react'
 import './Progress.less'
-interface Options {
+
+/**
+ * @flag 控制进度条的显示隐藏。
+ */
+interface Progress {
   flag: boolean | null
 }
-export default function Progress(props: Options) {
+export default function(props: Progress) {
   const div = createRef<HTMLDivElement>()
   const { flag } = props
   useEffect(() => {
