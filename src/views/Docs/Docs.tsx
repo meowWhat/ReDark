@@ -1,12 +1,11 @@
 import React from 'react'
-
 import './Docs.less'
-export default function Docs() {
-  const click = () => {}
+import { Sidebar } from '../../components'
 
+export default function Docs() {
   return (
     <article className="docs">
-      <h1 onClick={click}>button 应该如何使用</h1>
+      <Sidebar></Sidebar>
     </article>
   )
 }

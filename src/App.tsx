@@ -7,7 +7,7 @@ import './basic/basic.less'
 import logo from './basic/img/logo.png'
 
 const navItems = [
-  { text: '快速入门', url: '/docs' },
+  { text: '快速入门', url: '/quick' },
   { text: '组件文档', url: '/docs' },
   {
     text: '博客地址',

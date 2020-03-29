@@ -1,0 +1,55 @@
+.sidebar-group {
+  .sidebar-group-title {
+    /* title样式 */
+    width: 100%;
+    padding: 8px 16px 8px 35px;
+    color: rgba(0, 0, 0, 0.45);
+    line-height: 1.5715;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    text-decoration: none;
+    display: block;
+    &::after {
+      /* title下面的线 */
+      position: relative;
+      top: 12px;
+      display: block;
+      width: calc(100% - 20px);
+      height: 1px;
+      background: #f0f0f0;
+      content: '';
+    }
+  }
+  /* item样式 */
+  .sidebar-group-item {
+    display: block;
+    padding: 0 16px 0 35px;
+    height: 40px;
+    margin-top: 4px;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 40px;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    position: relative;
+    /* item经过样式  */
+    &:hover {
+      color: #3eaf7c;
+    }
+    /* 中文文字左间距 */
+    .chinese {
+      margin-left: 18px;
+      font-weight: 400;
+      font-size: 12px;
+      opacity: 0.67;
+    }
+  }
+  .sidebar-group-item-active {
+    /* 导航活跃样式 */
+    position: relative;
+    color: #3eaf7c;
+    border-right: 3px solid #3eaf7c;
+    background-color: rgba(134, 240, 178, 0.2);
+  }
+}

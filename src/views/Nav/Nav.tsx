@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import './Nav.less'
 
 export default function Nav(props: {
@@ -24,9 +24,14 @@ export default function Nav(props: {
           }
 
           return (
-            <Link to={el.url} key={index} className="nav-item">
+            <NavLink
+              to={el.url}
+              key={index}
+              className="nav-item"
+              activeClassName="nav-item-active"
+            >
               {el.text}
-            </Link>
+            </NavLink>
           )
         })}
       </nav>
