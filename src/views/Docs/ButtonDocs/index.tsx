@@ -1,28 +1,11 @@
-import React, { cloneElement, useEffect } from 'react'
+import React, { cloneElement } from 'react'
 import './index.less'
 
 import { Route } from 'react-router-dom'
 import { Button, DemoBox } from '../../../components'
-import '../../../../node_modules/highlight.js/styles/default.css'
-import marked from 'marked'
-import hljs from 'highlight.js'
-marked.setOptions({
-  renderer: new marked.Renderer(),
-  gfm: true,
-  pedantic: false,
-  sanitize: false,
-  breaks: true,
-  smartLists: true,
-  smartypants: true,
-  highlight: function(code) {
-    return hljs.highlightAuto(code).value
-  }
-})
 
+import Marked from '../../../util/Marked'
 export default function() {
-  useEffect(() => {
-    hljs.initHighlightingOnLoad()
-  })
   return (
     <Route path="/docs/button">
       <h1>Button 按钮</h1>
@@ -36,13 +19,13 @@ export default function() {
         title="禁用状态"
         desp="按钮不可用状态。"
         Components={DisabledButton()}
-        Code={'```'}
+        Code={DisabledButtonCode()}
       ></DemoBox>
       <DemoBox
         title="不同尺寸"
         desp="改变按钮的大小"
         Components={SizeButton()}
-        Code={'```'}
+        Code={SizeButtonCode()}
       ></DemoBox>
     </Route>
   )
@@ -104,14 +87,21 @@ const TypeButton = () => {
 }
 const TypeButtonCode = () => {
   return (
-    <div
-      dangerouslySetInnerHTML={{
-        __html: marked(`  
-  \`\`\`javascript
-    var a = 10
-  \`\`\`  `)
-      }}
-    ></div>
+    <Marked
+      text={`
+      //第一列 
+
+      <Button>default</Button> 
+      <Button shape="round">圆角按钮</Button>
+      <Button><span className="iconfont icon-sousuo"></span></Button>
+
+      //第二列
+
+      <Button type="primary">primary</Button> 
+      <Button shape="round" type="primary">圆角按钮</Button>
+      <Button type="primary"><span className="iconfont icon-biaoqian"></span></Button>
+   `}
+    ></Marked>
   )
 }
 
@@ -127,6 +117,15 @@ const DisabledButton = () => {
   )
 }
 
+const DisabledButtonCode = () => {
+  return (
+    <Marked
+      text={`
+      <Button disabled={true}></Button>
+   `}
+    ></Marked>
+  )
+}
 const SizeButton = () => {
   return (
     <>
@@ -143,5 +142,17 @@ const SizeButton = () => {
         Block
       </Button>
     </>
+  )
+}
+const SizeButtonCode = () => {
+  return (
+    <Marked
+      text={`
+      <Button type="success" size="large">Large</Button>
+      <Button size="middle">Middle</Button>
+      <Button type="primary" size="small" >Small</Button>
+      <Button type="info" block={true}></Button>
+   `}
+    ></Marked>
   )
 }
