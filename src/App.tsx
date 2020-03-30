@@ -41,7 +41,7 @@ function App(props: any) {
             clearTimeout(time.current)
           }
         }, 1500)
-      }, 250)
+      }, 150)
     )
   })
 

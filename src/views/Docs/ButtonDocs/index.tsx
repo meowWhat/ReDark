@@ -2,7 +2,7 @@ import React, { cloneElement } from 'react'
 import './index.less'
 
 import { Route } from 'react-router-dom'
-import { Button, DemoBox } from '../../../components'
+import { Button, ButtonGroup, DemoBox } from '../../../components'
 
 import Marked from '../../../util/Marked'
 export default function() {
@@ -14,23 +14,30 @@ export default function() {
         desp="基础按钮的用法"
         Components={TypeButton()}
         Code={TypeButtonCode()}
-      ></DemoBox>
+      />
       <DemoBox
         title="禁用状态"
         desp="按钮不可用状态。"
         Components={DisabledButton()}
         Code={DisabledButtonCode()}
-      ></DemoBox>
+      />
       <DemoBox
         title="不同尺寸"
         desp="改变按钮的大小"
         Components={SizeButton()}
         Code={SizeButtonCode()}
-      ></DemoBox>
+      />
+      <DemoBox
+        title="按钮群"
+        desp="多个按钮在一起时应该使用ButtonGroup"
+        Components={Group()}
+        Code={GroupCode()}
+      />
     </Route>
   )
 }
 
+/* 要展示的初始化组件 */
 const basicComp = [
   <Button key="defalut">default</Button>,
   <Button type="primary" key="primary">
@@ -62,6 +69,7 @@ const iconClass = [
   'icon-connect'
 ]
 
+/* type属性展示 */
 const TypeButton = () => {
   return (
     <>
@@ -105,6 +113,7 @@ const TypeButtonCode = () => {
   )
 }
 
+/* disabled 属性展示 */
 const DisabledButton = () => {
   return (
     <>
@@ -126,6 +135,8 @@ const DisabledButtonCode = () => {
     ></Marked>
   )
 }
+
+/* size 属性展示 */
 const SizeButton = () => {
   return (
     <>
@@ -153,6 +164,52 @@ const SizeButtonCode = () => {
       <Button type="primary" size="small" >Small</Button>
       <Button type="info" block={true}></Button>
    `}
+    ></Marked>
+  )
+}
+
+/* 按钮群展示 */
+const Group = () => {
+  return (
+    <>
+      <ButtonGroup>
+        <Button type="primary">
+          <span className="iconfont icon-arrow_left"></span>上一页
+        </Button>
+        <Button type="primary">
+          下一页&nbsp;<span className="iconfont icon-xiangyou"></span>
+        </Button>
+      </ButtonGroup>
+
+      <ButtonGroup>
+        <Button type="info">
+          <span className={'iconfont' + ' ' + iconClass[1]}></span>
+        </Button>
+        <Button type="info">
+          <span className={'iconfont' + ' ' + iconClass[2]}></span>
+        </Button>
+        <Button type="info">
+          <span className={'iconfont' + ' ' + iconClass[3]}></span>
+        </Button>
+        <Button type="info">
+          <span className={'iconfont' + ' ' + iconClass[4]}></span>
+        </Button>
+      </ButtonGroup>
+    </>
+  )
+}
+
+const GroupCode = () => {
+  return (
+    <Marked
+      text={`<ButtonGroup>
+  <Button type="primary">
+    <span className="iconfont icon-arrow_left"></span>上一页
+  </Button>
+  <Button type="primary">
+    下一页&nbsp;<span className="iconfont icon-xiangyou"></span>
+  </Button>
+  </ButtonGroup>`}
     ></Marked>
   )
 }

@@ -26,7 +26,9 @@ export default function(props: DemoBox) {
       <p className="demo-desp">{desp}</p>
       <section className="demo-box">
         <section className="demo-box-component">{Components}</section>
-        {flag ? <section className="demo-box-code">{Code}</section> : <></>}
+        <section className={flag ? 'demo-box-code' : 'demo-box-code-hidden'}>
+          {Code}
+        </section>
         <div
           className={flag ? 'demo-box-hidden' : 'demo-box-open'}
           onClick={showCode}

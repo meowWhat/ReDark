@@ -16,7 +16,6 @@ import './Button.less'
  * @size  按钮大小
  * @block 是否为块级按钮
  * @children 按钮内的text内容
- * @icon -----未完成
  */
 
 interface Button {
@@ -32,12 +31,10 @@ interface Button {
   href?: string
   onClick?: (event: React.MouseEvent) => void
   target?: '_blank' | '_self' | '_parent' | '_top'
-  loading?: boolean | { delay: number }
   shape?: 'circle' | 'round' | 'defalut'
   block?: boolean
   size?: 'large' | 'middle' | 'small'
   children?: string | any
-  icon?: boolean
   [key: string]: any
 }
 
