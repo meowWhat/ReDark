@@ -20,7 +20,14 @@ import './Button.less'
  */
 
 interface Button {
-  type?: 'primary' | 'danger' | 'success' | 'info' | 'warning' | 'secondary'
+  type?:
+    | 'default'
+    | 'primary'
+    | 'danger'
+    | 'success'
+    | 'info'
+    | 'warning'
+    | 'secondary'
   disabled?: boolean
   href?: string
   onClick?: (event: React.MouseEvent) => void
@@ -29,21 +36,23 @@ interface Button {
   shape?: 'circle' | 'round' | 'defalut'
   block?: boolean
   size?: 'large' | 'middle' | 'small'
-  children?: string
+  children?: string | any
   icon?: boolean
+  [key: string]: any
 }
 
 export default function(props: Button) {
   const {
     onClick,
-    type = 'primary',
+    type = 'default',
     children = '',
     size = 'middle',
     disabled = false,
     shape = 'defalut',
     block = false,
     href = '',
-    target = '_self'
+    target = '_self',
+    ...rest
   } = props
   /* 初始化类名 */
   const initClassName = () => {
@@ -70,7 +79,12 @@ export default function(props: Button) {
   /* 最基本的按钮 */
   const DefaultButton = () => {
     return (
-      <button className={initClassName()} disabled={disabled} onClick={onClick}>
+      <button
+        className={initClassName()}
+        disabled={disabled}
+        onClick={onClick}
+        {...rest}
+      >
         {children}
       </button>
     )

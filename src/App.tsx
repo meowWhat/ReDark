@@ -4,6 +4,7 @@ import { Nav, Home, Docs } from './views'
 import { Progress } from './components'
 import { debounce } from './util/debounce'
 import './basic/basic.less'
+import './font_4k9zmblakkf/iconfont.css'
 import logo from './basic/img/logo.png'
 
 const navItems = [

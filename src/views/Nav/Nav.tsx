@@ -20,7 +20,13 @@ export default function Nav(props: {
         {nav.map((el, index) => {
           if (el.isStaticRouter === false) {
             return (
-              <a href={el.url} target="_blank" key={index} className="nav-item">
+              <a
+                href={el.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={index}
+                className="nav-item"
+              >
                 {el.text}
               </a>
             )
