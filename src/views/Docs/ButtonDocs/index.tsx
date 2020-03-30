@@ -2,13 +2,13 @@ import React, { cloneElement } from 'react'
 import './index.less'
 
 import { Route } from 'react-router-dom'
-import { Button, ButtonGroup, DemoBox } from '../../../components'
-
+import { DemoBox, Table } from '../../../components'
+import { Button, ButtonGroup } from '../../../UI'
 import Marked from '../../../util/Marked'
 export default function() {
   return (
     <Route path="/docs/button">
-      <h1>Button 按钮</h1>
+      <h2>Button 按钮</h2>
       <DemoBox
         title="基础语法"
         desp="基础按钮的用法"
@@ -33,6 +33,15 @@ export default function() {
         Components={Group()}
         Code={GroupCode()}
       />
+      <h2>Api</h2>
+      <p>
+        通过设置 Button 的属性来产生不同的按钮样式，推荐顺序为：type -> size ->
+        shape -> disabled。 支持原生按钮的所有属性 。
+      </p>
+      <br />
+      <p>按钮的属性说明如下</p>
+      <br />
+      <Api></Api>
     </Route>
   )
 }
@@ -183,16 +192,16 @@ const Group = () => {
 
       <ButtonGroup>
         <Button type="info">
-          <span className={'iconfont' + ' ' + iconClass[1]}></span>
+          <span className={`iconfont ${iconClass[1]}`}></span>
         </Button>
         <Button type="info">
-          <span className={'iconfont' + ' ' + iconClass[2]}></span>
+          <span className={`iconfont ${iconClass[2]}`}></span>
         </Button>
         <Button type="info">
-          <span className={'iconfont' + ' ' + iconClass[3]}></span>
+          <span className={`iconfont ${iconClass[3]}`}></span>
         </Button>
         <Button type="info">
-          <span className={'iconfont' + ' ' + iconClass[4]}></span>
+          <span className={`iconfont ${iconClass[4]}`}></span>
         </Button>
       </ButtonGroup>
     </>
@@ -212,4 +221,39 @@ const GroupCode = () => {
   </ButtonGroup>`}
     ></Marked>
   )
+}
+
+/* Api文档 */
+const Api = () => {
+  const thead: any = ['属性', '说明', '类型', '默认值']
+  const tbody: any = [
+    ['disabled', '按钮失效状态', 'boolean', 'false'],
+    [
+      'href',
+      '点击跳转的地址，指定此属性 button 的行为和 a 链接一致',
+      'string',
+      '-'
+    ],
+    [
+      'shape',
+      '指定按钮的形状 可选值 round | circle | defult',
+      'string',
+      'default'
+    ],
+    [
+      'type',
+      '按钮的类型 可选值 default | primary | danger | success | info | warning | secondary',
+      'string',
+      'default'
+    ],
+    ['size', '按钮的大小 可选值 large | middle | small', 'string', 'middle'],
+    [
+      'target',
+      '按钮设置了href后的行为 可选值 _blank | _self | _parent',
+      'string',
+      '_self'
+    ],
+    ['onClick', '点击事件的回调函数', '()=>void', '-']
+  ]
+  return <Table thead={thead} tbody={tbody}></Table>
 }

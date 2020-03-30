@@ -3,6 +3,7 @@ import { Route, withRouter } from 'react-router-dom'
 import { Nav, Home, Docs } from './views'
 import { Progress } from './components'
 import { debounce } from './util/debounce'
+import { BackTop } from './UI'
 import './basic/basic.less'
 import './font_4k9zmblakkf/iconfont.css'
 import logo from './basic/img/logo.png'
@@ -29,6 +30,7 @@ const homeImg = {
 /* 最佳实践! */
 function App(props: any) {
   let time = useRef<NodeJS.Timeout>()
+
   const [flag, setFlag] = useState<boolean>(false)
 
   useEffect(() => {
@@ -40,7 +42,7 @@ function App(props: any) {
           if (time.current !== undefined) {
             clearTimeout(time.current)
           }
-        }, 1500)
+        }, 900)
       }, 150)
     )
   })
@@ -57,6 +59,8 @@ function App(props: any) {
       <Route path="/docs" component={Docs}></Route>
       {/* 进度条控制 */}
       <Progress flag={flag}></Progress>
+      {/* 回到顶部 */}
+      <BackTop />
     </>
   )
 }

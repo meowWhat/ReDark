@@ -3,7 +3,8 @@
  */
 import React from 'react'
 
-import { Button, Footer } from '../../components'
+import { Footer } from '../../components'
+import { Button } from '../../UI'
 import { Link } from 'react-router-dom'
 import './Home.less'
 
