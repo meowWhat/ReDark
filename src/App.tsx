@@ -30,11 +30,16 @@ const homeImg = {
 /* 最佳实践! */
 function App(props: any) {
   let time = useRef<NodeJS.Timeout>()
-
   const [flag, setFlag] = useState<boolean>(false)
 
   useEffect(() => {
-    props.history.listen(
+    /* 监听路由的变化 */
+    props.history.listen(() => {
+      /*页面回到顶部 */
+      if (document.body.scrollTop || document.documentElement.scrollTop > 0) {
+        window.scrollTo(0, 0)
+      }
+      /* 进度条控制 */
       debounce(() => {
         setFlag(true)
         time.current = setTimeout(() => {
@@ -43,8 +48,8 @@ function App(props: any) {
             clearTimeout(time.current)
           }
         }, 900)
-      }, 150)
-    )
+      }, 150)()
+    })
   })
 
   return (

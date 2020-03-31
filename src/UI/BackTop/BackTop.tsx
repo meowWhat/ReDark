@@ -4,9 +4,19 @@ interface BackTop {
   showHeight?: number
   right?: number
   bottom?: number
+  color?: string
+  size?: number
+  [key: string]: any
 }
 export default function(props: BackTop) {
-  const { right = 40, bottom = 40, showHeight = 120 } = props
+  const {
+    right = 40,
+    bottom = 40,
+    showHeight = 120,
+    size = 35,
+    color = '#3eaf7c',
+    ...res
+  } = props
   const [visible, setVsible] = useState<'hidden' | 'visible'>('hidden')
   let { current } = useRef<number>()
   const backTop = () => {
@@ -47,8 +57,12 @@ export default function(props: BackTop) {
         bottom: `${bottom}px`,
         visibility: visible
       }}
+      {...res}
     >
-      <span className="iconfont icon-xiangshang"></span>
+      <span
+        className="iconfont icon-xiangshang"
+        style={{ fontSize: `${size}px`, color }}
+      ></span>
     </div>
   )
 }

@@ -7,12 +7,12 @@ export default function() {
   return (
     <Route path="/docs/backTop">
       <h2>BackTop 回到顶部</h2>
-      <p>返回页面顶部的操作按钮</p>
+      <p>返回页面顶部的操作按钮,开箱即用</p>
       <DemoBox
         title="基础用法"
         desp="滑动页面即可看到右下方的按钮。"
         Components={`Scroll down to see the bottom-right button.`}
-        Code={Marked({ text: 'bla bla' })}
+        Code={Marked({ text: '<BackTop />' })}
       />
       <h2>Api</h2>
       <Api></Api>
