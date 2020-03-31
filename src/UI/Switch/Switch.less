@@ -3,9 +3,11 @@
   position: relative;
   width: 40px;
   height: 20px;
-  border: 1px solid #dcdfe6;
   border-radius: 10px;
-  background: #13ce66;
+  border: 1px solid #dcdfe6;
+  border-color: #409eff;
+  background-color: #409eff;
+
   cursor: pointer;
   transition: border-color 0.3s, background-color 0.3s;
   vertical-align: middle;
@@ -23,10 +25,27 @@
   }
 }
 
-.rd-switch-close {
+.rd-switch-colorful {
+  background: #13ce66;
+  border-color: #13ce66;
+}
+.rd-switch-colorful-close {
   background: #ff4949;
   border-color: rgb(255, 73, 73);
   &::after {
     left: 17px;
   }
+}
+
+.rd-switch-close {
+  background: #dcdfe6;
+  border-color: #dcdfe6;
+  &::after {
+    left: 17px;
+  }
+}
+
+.rd-switch-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }

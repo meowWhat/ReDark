@@ -2,6 +2,7 @@ import React from 'react'
 import { Table, DemoBox } from '../../../components'
 import Marked from '../../../util/Marked'
 import { Switch } from '../../../UI'
+import './index.less'
 export default function() {
   return (
     <>
@@ -10,23 +11,39 @@ export default function() {
       <DemoBox
         title="基础用法"
         desp="最简单的使用"
-        Components={Switch()}
-        Code={Marked({ text: 'Switch()' })}
+        Components={SwitchDemo()}
+        Code={SwitchDemoCode()}
       />
       <h2>Api</h2>
-      <Api></Api>
+      <Api />
     </>
   )
 }
 
+const SwitchDemo = () => {
+  return (
+    <>
+      <Switch type="colorful" />
+      <Switch />
+      <Switch type="colorful" disabled={true} />
+      <Switch disabled={true} />
+    </>
+  )
+}
+const SwitchDemoCode = () => {
+  return Marked({
+    text: `<Switch type="colorful" />
+  <Switch />
+  <Switch type="colorful" disabled={true} />
+  <Switch disabled={true} />`
+  })
+}
 const Api = () => {
   const thead = ['属性', '说明', '类型', '默认值']
   const tbody = [
-    ['showHeight', '展示BackTop的距离页面顶部的距离', 'number', '120'],
-    ['right', 'BackTop距离页面右边的距离', 'number', '40'],
-    ['bottom', 'BackTop距离页面底部的距离', 'number', '40'],
-    ['color', 'BackTop图标的颜色', 'string', '-'],
-    ['size', 'BackTop图标的大小', 'number', '30']
+    ['type', '开关的类型 可选值default | colorful', 'string', 'default'],
+    ['disabled', '禁用开关', 'boolean', 'false'],
+    ['onChange', '开关状态改变的回调函数', '()=>void', 'undefined']
   ]
   return <Table thead={thead} tbody={tbody}></Table>
 }
