@@ -1,13 +1,11 @@
 import React, { cloneElement } from 'react'
 import './index.less'
-
-import { Route } from 'react-router-dom'
 import { DemoBox, Table } from '../../../components'
 import { Button, ButtonGroup } from '../../../UI'
 import Marked from '../../../util/Marked'
 export default function() {
   return (
-    <Route path="/docs/button">
+    <>
       <h2>Button 按钮</h2>
       <DemoBox
         title="基础语法"
@@ -42,7 +40,7 @@ export default function() {
       <p>按钮的属性说明如下</p>
       <br />
       <Api></Api>
-    </Route>
+    </>
   )
 }
 

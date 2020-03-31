@@ -11,7 +11,7 @@ import SidebarGroup from './SidebarGroup/SidebarGroup'
 const group = [
   { url: '/docs/button', text: 'Button', chineseText: '按钮' },
   { url: '/docs/backTop', text: 'BackTop', chineseText: '回到顶部' },
-  { url: '/docs/table', text: 'Table', chineseText: '表格' },
+  { url: '/docs/switch', text: 'Switch', chineseText: '开关' },
   { url: '/docs/bsd', text: 'icon', chineseText: '图标' }
 ]
 
@@ -20,7 +20,7 @@ export default function Sidebar() {
     <aside className="sidebar">
       <ul className="sidebar-links">
         <li>
-          <SidebarGroup group={group} title="主要"></SidebarGroup>
+          <SidebarGroup group={group} title="单一组件"></SidebarGroup>
         </li>
       </ul>
     </aside>

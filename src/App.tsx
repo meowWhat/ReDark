@@ -27,7 +27,6 @@ const homeImg = {
   alt: 'ReDark'
 }
 
-/* 最佳实践! */
 function App(props: any) {
   let time = useRef<NodeJS.Timeout>()
   const [flag, setFlag] = useState<boolean>(false)

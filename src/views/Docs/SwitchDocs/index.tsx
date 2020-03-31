@@ -1,18 +1,17 @@
 import React from 'react'
 import { Table, DemoBox } from '../../../components'
-
 import Marked from '../../../util/Marked'
-
+import { Switch } from '../../../UI'
 export default function() {
   return (
     <>
-      <h2>BackTop 回到顶部</h2>
-      <p>返回页面顶部的操作按钮,开箱即用</p>
+      <h2>Switch 开关</h2>
+      <p>开表示两种相互对立的状态间的切换，多用于触发「开/关」。</p>
       <DemoBox
         title="基础用法"
-        desp="滑动页面即可看到右下方的按钮。"
-        Components={`Scroll down to see the bottom-right button.`}
-        Code={Marked({ text: '<BackTop />' })}
+        desp="最简单的使用"
+        Components={Switch()}
+        Code={Marked({ text: 'Switch()' })}
       />
       <h2>Api</h2>
       <Api></Api>
