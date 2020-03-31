@@ -2,14 +2,15 @@
 import React, { Suspense } from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import { Sidebar } from '../../components'
-import { BackTopDocs, ButtonDocs, SwitchDocs } from './DocsManage'
+import { BackTopDocs, ButtonDocs, SwitchDocs, TagDocs } from './DocsManage'
 import './Docs.less'
 
 /* 组件对应的路由表 */
 const routerTable = [
   { comp: ButtonDocs, path: '/docs/button' },
   { comp: BackTopDocs, path: '/docs/backTop' },
-  { comp: SwitchDocs, path: '/docs/switch' }
+  { comp: SwitchDocs, path: '/docs/switch' },
+  { comp: TagDocs, path: '/docs/tag' }
 ]
 
 /* 解析展示路由表*/

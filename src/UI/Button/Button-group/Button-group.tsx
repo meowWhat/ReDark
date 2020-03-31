@@ -2,10 +2,23 @@
 import React, { ReactNode } from 'react'
 import './Button-group.less'
 
-export default function(props: { children: ReactNode; [key: string]: any }) {
-  const { children, ...res } = props
+interface ButtonGroup {
+  children: ReactNode
+  className?: string
+  [key: string]: any
+}
+
+export default function(props: ButtonGroup) {
+  const { children, className: cn = undefined, ...res } = props
+  const initClassName = () => {
+    let className = 'rd-btn-group'
+    if (cn !== undefined) {
+      className = `${className} ${cn}`
+    }
+    return className
+  }
   return (
-    <div className="rd-btn-group" {...res}>
+    <div className={initClassName()} {...res}>
       {children}
     </div>
   )

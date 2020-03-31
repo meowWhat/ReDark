@@ -12,7 +12,7 @@ const group = [
   { url: '/docs/button', text: 'Button', chineseText: '按钮' },
   { url: '/docs/backTop', text: 'BackTop', chineseText: '回到顶部' },
   { url: '/docs/switch', text: 'Switch', chineseText: '开关' },
-  { url: '/docs/bsd', text: 'icon', chineseText: '图标' }
+  { url: '/docs/tag', text: 'Tag', chineseText: '标签' }
 ]
 
 export default function Sidebar() {

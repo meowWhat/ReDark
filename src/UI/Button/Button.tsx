@@ -35,6 +35,7 @@ interface Button {
   block?: boolean
   size?: 'large' | 'middle' | 'small'
   children?: string | any
+  className?: string
   [key: string]: any
 }
 
@@ -49,6 +50,7 @@ export default function(props: Button) {
     block = false,
     href = '',
     target = '_self',
+    className: cn = undefined,
     ...rest
   } = props
   /* 初始化类名 */
@@ -62,6 +64,9 @@ export default function(props: Button) {
     }
     if (block) {
       className = `${className} rd-btn-block`
+    }
+    if (cn !== undefined) {
+      className = `${className} ${cn}`
     }
     return className
   }

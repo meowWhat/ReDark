@@ -12,6 +12,7 @@ interface Switch {
   type?: 'default' | 'colorful'
   onChange?: () => void
   disabled?: boolean
+  className?: string
   [key: string]: any
 }
 
@@ -20,6 +21,7 @@ export default function(props: Switch) {
     type = 'default',
     onChange = undefined,
     disabled = false,
+    className: cn = undefined,
     ...res
   } = props
 
@@ -43,6 +45,9 @@ export default function(props: Switch) {
     }
     if (disabled === true) {
       className = `${className} rd-switch-disabled`
+    }
+    if (className !== undefined) {
+      className = `${className} ${cn}`
     }
     return className
   }

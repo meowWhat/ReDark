@@ -38,6 +38,7 @@ const SwitchDemoCode = () => {
   <Switch disabled={true} />`
   })
 }
+
 const Api = () => {
   const thead = ['属性', '说明', '类型', '默认值']
   const tbody = [
