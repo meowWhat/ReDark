@@ -6,22 +6,30 @@ import './Sidebar.less'
 import SidebarGroup from './SidebarGroup/SidebarGroup'
 
 /**
- * ---暂无参数
+ *  @groupArr  侧边栏数组
  */
-const group = [
-  { url: '/docs/button', text: 'Button', chineseText: '按钮' },
-  { url: '/docs/backTop', text: 'BackTop', chineseText: '回到顶部' },
-  { url: '/docs/switch', text: 'Switch', chineseText: '开关' },
-  { url: '/docs/tag', text: 'Tag', chineseText: '标签' }
-]
+interface Group {
+  url: string
+  text: string
+  chineseText: string
+}
+interface Sidebar {
+  groupArr: Array<{ group: Array<Group>; title: string }>
+}
 
-export default function Sidebar() {
+export default function(props: Sidebar) {
+  const { groupArr = [] } = props
   return (
     <aside className="sidebar">
       <ul className="sidebar-links">
-        <li>
-          <SidebarGroup group={group} title="单一组件"></SidebarGroup>
-        </li>
+        {groupArr.map((arr) => {
+          const { group, title } = arr
+          return (
+            <li key={title}>
+              <SidebarGroup group={group} title={title} />
+            </li>
+          )
+        })}
       </ul>
     </aside>
   )
