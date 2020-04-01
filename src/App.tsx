@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Route, withRouter } from 'react-router-dom'
+import { Route, withRouter, RouteComponentProps } from 'react-router-dom'
 import { Nav, Home, Docs } from './views'
 import { Progress } from './components'
 import { debounce } from './util/debounce'
@@ -27,7 +27,7 @@ const homeImg = {
   alt: 'ReDark'
 }
 
-function App(props: any) {
+function App(props: RouteComponentProps) {
   let time = useRef<NodeJS.Timeout>()
   const [flag, setFlag] = useState<boolean>(false)
 
@@ -49,7 +49,7 @@ function App(props: any) {
         }, 900)
       }, 150)()
     })
-  })
+  }, [props.history])
 
   return (
     <>

@@ -17,6 +17,7 @@ export default function(props: BackTop) {
     color = '#3eaf7c',
     ...res
   } = props
+
   const [visible, setVsible] = useState<'hidden' | 'visible'>('hidden')
   let { current } = useRef<number>()
   const backTop = () => {
@@ -36,8 +37,8 @@ export default function(props: BackTop) {
     })
   }
   useEffect(() => {
-    document.onscroll = () => {
-      if (window.scrollY >= showHeight) {
+    const scroll = () => {
+      if (window.scrollY > showHeight) {
         if (visible === 'hidden') {
           setVsible('visible')
         }
@@ -47,7 +48,12 @@ export default function(props: BackTop) {
         }
       }
     }
-  })
+    document.addEventListener('scroll', scroll)
+    return () => {
+      document.removeEventListener('scroll', scroll)
+    }
+  }, [visible, showHeight])
+
   return (
     <div
       className="rd-backTop"
@@ -62,7 +68,7 @@ export default function(props: BackTop) {
       <span
         className="iconfont icon-xiangshang"
         style={{ fontSize: `${size}px`, color }}
-      ></span>
+      />
     </div>
   )
 }

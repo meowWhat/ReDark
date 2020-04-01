@@ -1,7 +1,7 @@
 /**
  * @Progress 网站进度条
  */
-import React, { createRef, useEffect } from 'react'
+import React from 'react'
 import './Progress.less'
 
 /**
@@ -11,16 +11,15 @@ interface Progress {
   flag: boolean | null
 }
 export default function(props: Progress) {
-  const div = createRef<HTMLDivElement>()
   const { flag } = props
-  useEffect(() => {
-    if (div.current) {
-      if (flag) {
-        div.current.className = 'progress progress-start'
-      } else {
-        div.current.className = 'progress progress-end'
-      }
+  const getClssName = () => {
+    let className = 'progress'
+    if (flag) {
+      className = `${className} progress-start`
+    } else {
+      className = `${className} progress-end`
     }
-  })
-  return <div className="progress" ref={div}></div>
+    return className
+  }
+  return <div className={getClssName()}></div>
 }
