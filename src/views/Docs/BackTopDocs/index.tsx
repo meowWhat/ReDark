@@ -26,7 +26,7 @@ const Api = () => {
     ['showHeight', '展示BackTop的距离页面顶部的距离', 'number', '120'],
     ['right', 'BackTop距离页面右边的距离', 'number', '40'],
     ['bottom', 'BackTop距离页面底部的距离', 'number', '40'],
-    ['color', 'BackTop图标的颜色', 'string', '-'],
+    ['color', 'BackTop图标的颜色', 'string', '#3eaf7c'],
     ['size', 'BackTop图标的大小', 'number', '30']
   ]
   return <Table thead={thead} tbody={tbody}></Table>
