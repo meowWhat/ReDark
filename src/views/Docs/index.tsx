@@ -4,6 +4,7 @@ import { Route, Redirect } from 'react-router-dom'
 import './index.less'
 
 import { Sidebar } from '../../components'
+import { Spin } from '../../UI'
 import * as docsManage from './DocsManage'
 
 /* 生成侧边栏路由表(link 表) */
@@ -15,7 +16,7 @@ const sidebarGroup = [
       { url: '/docs/switch', text: 'Switch', chineseText: '开关' },
       { url: '/docs/spin', text: 'Spin', chineseText: '加载中' },
       { url: '/docs/tag', text: 'Tag', chineseText: '标签' },
-      { url: '/docs/backTop', text: 'BackTop', chineseText: '回到顶部' }
+      { url: '/docs/backtop', text: 'BackTop', chineseText: '回到顶部' }
     ],
     title: '单一组件'
   }
@@ -45,7 +46,7 @@ const RouteRender = () => {
           const { comp: Comp, path } = el
           return (
             <Route path={path} key={path}>
-              <Suspense fallback={'loading~~~'}>
+              <Suspense fallback={<Spin delay={100} spinning={true} />}>
                 <Comp />
               </Suspense>
             </Route>

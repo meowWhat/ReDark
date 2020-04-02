@@ -10,6 +10,7 @@ import './Switch.less'
 
 interface Switch {
   type?: 'default' | 'colorful'
+  initState?: boolean
   onChange?: () => void
   disabled?: boolean
   className?: string
@@ -19,13 +20,14 @@ interface Switch {
 export default function(props: Switch) {
   const {
     type = 'default',
+    initState = true,
     onChange = undefined,
     disabled = false,
     className: cn = undefined,
     ...res
   } = props
 
-  const [flag, setFlag] = useState(true)
+  const [flag, setFlag] = useState(initState)
   const changeSwitch = () => {
     if (disabled !== true) {
       setFlag(!flag)
