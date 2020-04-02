@@ -16,9 +16,10 @@ const sidebarGroup = [
       { url: '/docs/switch', text: 'Switch', chineseText: '开关' },
       { url: '/docs/spin', text: 'Spin', chineseText: '加载中' },
       { url: '/docs/tag', text: 'Tag', chineseText: '标签' },
+      { url: '/docs/alert', text: 'Alert', chineseText: '警告' },
       { url: '/docs/backtop', text: 'BackTop', chineseText: '回到顶部' }
     ],
-    title: '单一组件'
+    title: '通用'
   }
 ]
 

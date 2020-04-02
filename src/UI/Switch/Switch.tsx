@@ -11,7 +11,7 @@ import './Switch.less'
 interface Switch {
   type?: 'default' | 'colorful'
   initState?: boolean
-  onChange?: () => void
+  onChange?: (e: React.MouseEvent) => void
   disabled?: boolean
   className?: string
   [key: string]: any
@@ -28,11 +28,11 @@ export default function(props: Switch) {
   } = props
 
   const [flag, setFlag] = useState(initState)
-  const changeSwitch = () => {
+  const changeSwitch = (event: React.MouseEvent) => {
     if (disabled !== true) {
       setFlag(!flag)
       if (onChange !== undefined) {
-        onChange()
+        onChange(event)
       }
     }
   }
@@ -48,7 +48,7 @@ export default function(props: Switch) {
     if (disabled === true) {
       className = `${className} rd-switch-disabled`
     }
-    if (className !== undefined) {
+    if (cn !== undefined) {
       className = `${className} ${cn}`
     }
     return className

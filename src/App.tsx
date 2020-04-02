@@ -5,7 +5,7 @@ import { Progress } from './components'
 import { debounce } from './util/debounce'
 import { BackTop } from './UI'
 import './basic/basic.less'
-import './font_4k9zmblakkf/iconfont.css'
+import './font_gcnh5wzu7s6/iconfont.css'
 import logo from './basic/img/logo.png'
 
 const navItems = [

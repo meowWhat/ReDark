@@ -4,5 +4,6 @@ import BackTop from './BackTop/BackTop'
 import Switch from './Switch/Switch'
 import Tag from './Tag/Tag'
 import Spin from './Spin/Spin'
+import Alert from './Alert/Alert'
 
-export { Button, ButtonGroup, BackTop, Switch, Tag, Spin }
+export { Button, ButtonGroup, BackTop, Switch, Tag, Spin, Alert }

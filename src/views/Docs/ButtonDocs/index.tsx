@@ -251,7 +251,7 @@ const Api = () => {
       'string',
       '_self'
     ],
-    ['onClick', '点击事件的回调函数', '()=>void', '-']
+    ['onClick', '点击事件的回调函数', '(e:MouseEvent)=>void', '-']
   ]
   return <Table thead={thead} tbody={tbody}></Table>
 }

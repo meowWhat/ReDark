@@ -45,7 +45,7 @@ const Api = () => {
     ['type', '开关的类型 可选值default | colorful', 'string', 'default'],
     ['initState', '开关初始状态 ture=>open | false=>close', 'boolean', 'true'],
     ['disabled', '禁用开关', 'boolean', 'false'],
-    ['onChange', '开关状态改变的回调函数', '()=>void', 'undefined']
+    ['onChange', '开关状态改变的回调函数', '(e:MouseEvent)=>void', 'undefined']
   ]
   return <Table thead={thead} tbody={tbody}></Table>
 }

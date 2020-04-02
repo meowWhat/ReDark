@@ -127,7 +127,7 @@ const Api = () => {
     ['color', '自定义颜色', 'string', 'undefined'],
     ['closable', '标签是否可关闭', 'boolean', 'false'],
     ['visible', '标签是否可见', 'boolean', 'true'],
-    ['onClose', '标签关闭的回调函数', '()=>void', 'undefined']
+    ['onClose', '标签关闭的回调函数', '(e: MouseEvent )=>void', 'undefined']
   ]
   return <Table thead={thead} tbody={tbody}></Table>
 }

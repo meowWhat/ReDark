@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Table, DemoBox } from '../../../components'
 import Marked from '../../../util/Marked'
-import { Spin, Switch } from '../../../UI'
+import { Spin, Switch, Alert } from '../../../UI'
 import './index.less'
 export default function() {
   return (
@@ -55,12 +55,15 @@ const SpinTipDemo = (props: { delay: number }) => {
   return (
     <div className="spinTipDemoItem">
       <Spin tip="文字描述" spinning={flag} delay={props.delay}>
-        <p>
-          spin支持自定义颜色,拥有多种大小,支持自定义描述文案。将spin放入容器中,需要给spin的父盒子一个宽度,并将容器组件放在spin的children中.而且你还可以用spinning属性控制spin的显示与隐藏.！！
-        </p>
+        <Alert
+          message="Spin-Tip-Demo"
+          type="success"
+          description="spin支持自定义颜色,拥有多种大小,支持自定义描述文案。将spin放入容器中,需要给spin的父盒子一个宽度,并将容器组件放在spin的children中.而且你还可以用spinning属性控制spin的显示与隐藏.还有delay功能,帮你解决spin闪烁的问题！"
+          showIcon={true}
+        />
       </Spin>
       <br />
-      Spin 开关 {props.delay} 延迟: &nbsp;
+      👻 {props.delay} ms 延迟: &nbsp;
       <Switch
         type="colorful"
         initState={false}
@@ -79,14 +82,17 @@ const SpinTipDemoCode = () => {
       return (
         <div className="spinTipDemoItem">
           <Spin tip="文字描述" spinning={flag} delay={props.delay}>
-            <p>
-              spin支持自定义颜色,拥有多种大小,支持自定义描述文案。将spin放入容器中,需要给spin的
-              父盒子一个宽度,并将容器组件放在spin的children中.而且你还可以用spinning属性控制
-              spin的显示与隐藏.！！
-            </p>
+          <Alert
+          message="Spin-Tip-Demo"
+          type="success"
+          description="spin支持自定义颜色,拥有多种大小,支持自定义描述文案。将spin放入容器中,需
+          要给spin的父盒子一个宽度,并将容器组件放在spin的children中.而且你还可以用spinning属性
+          控制spin的显示与隐藏.还有delay功能,帮你解决spin闪烁的问题！"
+          showIcon={true}
+        />
           </Spin>
           <br />
-          Spin 开关 {props.delay} 延迟: &nbsp;
+          👻 {props.delay} ms 延迟: &nbsp;
           <Switch
             type="colorful"
             initState={false}
