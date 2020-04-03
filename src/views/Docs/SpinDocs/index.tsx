@@ -19,8 +19,8 @@ export default function() {
         desp="轻点开关尝试一下！！"
         Components={
           <div className="spinTipDemo">
-            <SpinTipDemo delay={0} />
-            <SpinTipDemo delay={1000} />
+            <SpinTipDemo delay={0} simple={false} />
+            <SpinTipDemo delay={1000} simple={true} />
           </div>
         }
         Code={SpinTipDemoCode()}
@@ -38,6 +38,9 @@ const SpinDemo = () => {
       <Spin size="small" color="#f81d22" spinning={true} />
       <Spin spinning={true} />
       <Spin size="large" color="#1890ff" spinning={true} />
+      <Spin size="small" color="#f81d22" spinning={true} simple={true} />
+      <Spin spinning={true} simple={true} />
+      <Spin size="large" color="#1890ff" spinning={true} simple={true} />
     </>
   )
 }
@@ -45,16 +48,24 @@ const SpinDemoCode = () => {
   return Marked({
     text: `  <Spin size="small" color="#f81d22" spinning={true} />
     <Spin spinning={true} />
-    <Spin size="large" color="#1890ff" spinning={true} />`
+    <Spin size="large" color="#1890ff" spinning={true} />
+    <Spin size="small" color="#f81d22" spinning={true} simple={true} />
+    <Spin spinning={true} simple={true} />
+    <Spin size="large" color="#1890ff" spinning={true} simple={true} />`
   })
 }
 
 /* 支持tip  */
-const SpinTipDemo = (props: { delay: number }) => {
+const SpinTipDemo = (props: { delay: number; simple: boolean }) => {
   const [flag, setFlag] = useState(false)
   return (
     <div className="spinTipDemoItem">
-      <Spin tip="文字描述" spinning={flag} delay={props.delay}>
+      <Spin
+        tip="文字描述"
+        spinning={flag}
+        delay={props.delay}
+        simple={props.simple}
+      >
         <Alert
           message="Spin-Tip-Demo"
           type="success"
@@ -77,19 +88,24 @@ const SpinTipDemo = (props: { delay: number }) => {
 const SpinTipDemoCode = () => {
   return Marked({
     text: `//tsx
-    const SpinTipDemo = (props: { delay: number }) => {
+    const SpinTipDemo = (props: { delay: number; simple: boolean }) => {
       const [flag, setFlag] = useState(false)
       return (
         <div className="spinTipDemoItem">
-          <Spin tip="文字描述" spinning={flag} delay={props.delay}>
-          <Alert
-          message="Spin-Tip-Demo"
-          type="success"
-          description="spin支持自定义颜色,拥有多种大小,支持自定义描述文案。将spin放入容器中,需
-          要给spin的父盒子一个宽度,并将容器组件放在spin的children中.而且你还可以用spinning属性
-          控制spin的显示与隐藏.还有delay功能,帮你解决spin闪烁的问题！"
-          showIcon={true}
-        />
+          <Spin
+            tip="文字描述"
+            spinning={flag}
+            delay={props.delay}
+            simple={props.simple}
+          >
+            <Alert
+              message="Spin-Tip-Demo"
+              type="success"
+              description="spin支持自定义颜色,拥有多种大小,支持自定义描述文案。将spin放入容器
+              中,需要给spin的父盒子一个宽度,并将容器组件放在spin的children中.而且你还可以用
+              spinning属性控制spin的显示与隐藏.还有delay功能,帮你解决spin闪烁的问题！"
+              showIcon={true}
+            />
           </Spin>
           <br />
           👻 {props.delay} ms 延迟: &nbsp;
@@ -105,8 +121,8 @@ const SpinTipDemoCode = () => {
     }
     React.render(
   <div className="spinTipDemo">
-    <SpinTipDemo delay={0} />
-    <SpinTipDemo delay={1000} />
+  <SpinTipDemo delay={0} simple={false} />
+  <SpinTipDemo delay={1000} simple={true} />
   </div>
   ,document.querySelector('#root'))
 
@@ -132,6 +148,7 @@ const SpinTipDemoCode = () => {
 const Api = () => {
   const thead = ['属性', '说明', '类型', '默认值']
   const tbody = [
+    ['simple', '控制spin的样式', 'boolean', 'false'],
     ['spinning', '控制spin的显示与隐藏', 'boolean', 'false'],
     ['size', '控制spin的大小 可选default | small | large', 'string', 'default'],
     ['color', '控制spin的主题颜色', 'string', '#3eaf7c'],

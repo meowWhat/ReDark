@@ -8,6 +8,16 @@ const ButtonDocs = React.lazy(() => import('./ButtonDocs'))
 const TagDocs = React.lazy(() => import('./TagDocs'))
 const SpinDocs = React.lazy(() => import('./SpinDocs'))
 const AlertDocs = React.lazy(() => import('./AlertDocs'))
+const MessageDocs = React.lazy(() => import('./MessageDocs'))
+
 /* ... */
 
-export { SwitchDocs, BackTopDocs, ButtonDocs, TagDocs, SpinDocs, AlertDocs }
+export {
+  SwitchDocs,
+  BackTopDocs,
+  ButtonDocs,
+  TagDocs,
+  SpinDocs,
+  AlertDocs,
+  MessageDocs
+}

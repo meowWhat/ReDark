@@ -14,12 +14,18 @@ const sidebarGroup = [
     group: [
       { url: '/docs/button', text: 'Button', chineseText: '按钮' },
       { url: '/docs/switch', text: 'Switch', chineseText: '开关' },
-      { url: '/docs/spin', text: 'Spin', chineseText: '加载中' },
       { url: '/docs/tag', text: 'Tag', chineseText: '标签' },
-      { url: '/docs/alert', text: 'Alert', chineseText: '警告' },
       { url: '/docs/backtop', text: 'BackTop', chineseText: '回到顶部' }
     ],
     title: '通用'
+  },
+  {
+    group: [
+      { url: '/docs/alert', text: 'Alert', chineseText: '警告' },
+      { url: '/docs/spin', text: 'Spin', chineseText: '加载中' },
+      { url: '/docs/message', text: 'Message', chineseText: '全局提示' }
+    ],
+    title: '反馈'
   }
 ]
 

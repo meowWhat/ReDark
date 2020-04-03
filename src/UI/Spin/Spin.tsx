@@ -6,6 +6,7 @@ interface Spin {
   color?: string
   tip?: string
   delay?: number
+  simple?: boolean
   children?: any
   [key: string]: any
 }
@@ -16,11 +17,13 @@ export default function(props: Spin) {
     size = 'default',
     color = 'default',
     tip = 'default',
+    simple = false,
     delay = 0,
     children = undefined,
     ...res
   } = props
   let [flag, setFlag] = useState(false)
+
   let temp = useRef<NodeJS.Timeout>()
   useEffect(() => {
     /* 加入延迟效果 */
@@ -40,11 +43,15 @@ export default function(props: Spin) {
   /* default comp */
   const getClssName = () => {
     let className = 'rd-spin'
+
     if (size !== 'default') {
       className = `${className} rd-spin-${size}`
     }
     if (flag === true) {
       className = `${className} rd-spin-spinning`
+    }
+    if (simple) {
+      className = `${className} rd-spin-simple`
     }
     return className
   }
@@ -65,7 +72,12 @@ export default function(props: Spin) {
   const defaultComp = () => {
     return (
       <div className={getClssName()} style={getFontStyle()} {...res}>
-        <span className="rd-spin-dot">
+        <span
+          className="rd-spin-dot"
+          style={
+            simple && color !== 'default' ? { borderLeftColor: color } : {}
+          }
+        >
           {[0, 0, 0, 0].map((_, index) => {
             return (
               <i
