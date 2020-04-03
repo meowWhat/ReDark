@@ -1,10 +1,7 @@
-import Button from './Button/Button'
-import ButtonGroup from './Button/Button-group/Button-group'
-import BackTop from './BackTop/BackTop'
-import Switch from './Switch/Switch'
-import Tag from './Tag/Tag'
-import Spin from './Spin/Spin'
-import Alert from './Alert/Alert'
-import Message from './Message/Message'
+// common
+import { Button, ButtonGroup, Switch, Tag, BackTop } from './common'
 
-export { Button, ButtonGroup, BackTop, Switch, Tag, Spin, Alert, Message }
+//feedback
+import { Alert, Message, Spin } from './feedback'
+
+export { Button, ButtonGroup, Switch, Tag, BackTop, Alert, Message, Spin }

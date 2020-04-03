@@ -1,7 +1,7 @@
 import React from 'react'
-import { Table, DemoBox } from '../../../components'
-import Marked from '../../../util/Marked'
-import { Alert } from '../../../UI'
+import { Table, DemoBox } from 'src/components'
+import Marked from 'src/util/Marked'
+import { Alert } from 'src/UI'
 import './index.less'
 export default function() {
   return (

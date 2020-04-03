@@ -1,7 +1,7 @@
 import React from 'react'
-import { Table, DemoBox } from '../../../components'
+import { Table, DemoBox } from 'src/components'
 
-import Marked from '../../../util/Marked'
+import Marked from 'src/util/Marked'
 
 export default function() {
   return (

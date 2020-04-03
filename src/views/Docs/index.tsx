@@ -3,9 +3,9 @@ import React, { Suspense, FunctionComponent } from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import './index.less'
 
-import { Sidebar } from '../../components'
-import { Spin } from '../../UI'
-import * as docsManage from './DocsManage'
+import { Sidebar } from 'src/components'
+import { Spin } from 'src/UI'
+import docsManage from './DocsManage'
 
 /* 生成侧边栏路由表(link 表) */
 
