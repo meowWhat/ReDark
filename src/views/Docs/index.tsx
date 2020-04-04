@@ -15,23 +15,28 @@ const sidebarGroup = [
       { url: '/docs/button', text: 'Button', chineseText: '按钮' },
       { url: '/docs/switch', text: 'Switch', chineseText: '开关' },
       { url: '/docs/tag', text: 'Tag', chineseText: '标签' },
-      { url: '/docs/backtop', text: 'BackTop', chineseText: '回到顶部' }
+      { url: '/docs/backtop', text: 'BackTop', chineseText: '回到顶部' },
     ],
-    title: '通用'
+    title: '通用',
   },
   {
     group: [
       { url: '/docs/alert', text: 'Alert', chineseText: '警告' },
       { url: '/docs/spin', text: 'Spin', chineseText: '加载中' },
-      { url: '/docs/message', text: 'Message', chineseText: '全局提示' },
+      {
+        url: '/docs/modal',
+        text: 'Modal',
+        chineseText: '模态框',
+      },
       {
         url: '/docs/result',
         text: 'Result',
-        chineseText: '结果'
-      }
+        chineseText: '结果',
+      },
+      { url: '/docs/message', text: 'Message', chineseText: '全局提示' },
     ],
-    title: '反馈'
-  }
+    title: '反馈',
+  },
 ]
 
 /* 生成组件对应的路由表(path 表) */
@@ -44,7 +49,7 @@ const routerTable: Array<DocsRoute> = []
 Object.keys(docsManage).forEach((key) => {
   routerTable.push({
     comp: (docsManage as any)[key],
-    path: `/docs/${key.slice(0, key.length - 4).toLocaleLowerCase()}`
+    path: `/docs/${key.slice(0, key.length - 4).toLocaleLowerCase()}`,
   })
 })
 
