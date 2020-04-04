@@ -23,7 +23,12 @@ const sidebarGroup = [
     group: [
       { url: '/docs/alert', text: 'Alert', chineseText: '警告' },
       { url: '/docs/spin', text: 'Spin', chineseText: '加载中' },
-      { url: '/docs/message', text: 'Message', chineseText: '全局提示' }
+      { url: '/docs/message', text: 'Message', chineseText: '全局提示' },
+      {
+        url: '/docs/result',
+        text: 'Result',
+        chineseText: '结果'
+      }
     ],
     title: '反馈'
   }
