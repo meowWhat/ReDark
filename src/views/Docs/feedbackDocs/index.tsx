@@ -7,4 +7,6 @@ const AlertDocs = React.lazy(() => import('./AlertDocs'))
 const MessageDocs = React.lazy(() => import('./MessageDocs'))
 const ResultDocs = React.lazy(() => import('./ResultDocs'))
 const ModalDocs = React.lazy(() => import('./ModalDocs'))
-export { SpinDocs, AlertDocs, MessageDocs, ResultDocs, ModalDocs }
+const SkeletonDocs = React.lazy(() => import('./SkeletonDocs'))
+
+export { SpinDocs, AlertDocs, MessageDocs, ResultDocs, ModalDocs, SkeletonDocs }

@@ -8,6 +8,7 @@ interface Result {
   title: string
   desp?: string
   extra?: ReactNode
+  [key: string]: any
 }
 export default function (props: Result) {
   const {
@@ -16,9 +17,10 @@ export default function (props: Result) {
     desp = '',
     imgSrc = undefined,
     extra,
+    ...res
   } = props
   return (
-    <div className="rd-result">
+    <div className="rd-result" {...res}>
       <div className="rd-result-icon">
         {imgSrc === undefined ? (
           <span className={getIcon(type)} />

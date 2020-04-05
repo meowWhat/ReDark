@@ -33,6 +33,11 @@ const sidebarGroup = [
         text: 'Result',
         chineseText: '结果',
       },
+      {
+        url: '/docs/skeleton',
+        text: 'Skeleton',
+        chineseText: '骨架屏',
+      },
       { url: '/docs/message', text: 'Message', chineseText: '全局提示' },
     ],
     title: '反馈',

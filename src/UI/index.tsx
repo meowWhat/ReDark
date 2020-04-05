@@ -2,7 +2,16 @@
 import { Button, ButtonGroup, Switch, Tag, BackTop } from './common'
 
 //feedback
-import { Alert, Message, Spin, Result, Modal } from './feedback'
+import {
+  Alert,
+  Message,
+  Spin,
+  Result,
+  Modal,
+  Skeleton,
+  SkeletonAvatar,
+  SkeletonInput,
+} from './feedback'
 
 export {
   Button,
@@ -15,4 +24,7 @@ export {
   Spin,
   Result,
   Modal,
+  Skeleton,
+  SkeletonAvatar,
+  SkeletonInput,
 }

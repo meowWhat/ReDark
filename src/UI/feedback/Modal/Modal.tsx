@@ -8,6 +8,7 @@ interface Modal {
   title: string
   content: string | ReactNode
   footer: string | ReactNode
+  [key: string]: any
 }
 export default function (props: Modal) {
   const {
@@ -17,9 +18,10 @@ export default function (props: Modal) {
     title,
     content,
     footer,
+    ...res
   } = props
   return (
-    <div className={isShow ? 'rd-modal' : 'rd-modal-hide'}>
+    <div className={isShow ? 'rd-modal' : 'rd-modal-hide'} {...res}>
       <div className="rd-modal-content">
         <div className="rd-modal-header">
           <span className="rd-modal-title">{title}</span>

@@ -5,11 +5,12 @@ import getIcon from 'src/util/getIconClass'
 /* message 容器 */
 interface Message {
   notices: Array<Notice>
+  [key: string]: any
 }
-export default function(props: Message) {
-  const { notices } = props
+export default function (props: Message) {
+  const { notices, ...res } = props
   return (
-    <div className="rd-message">
+    <div className="rd-message" {...res}>
       {notices.map((el, index) => {
         return <Noitce {...el} key={index + Date.now()} />
       })}
@@ -34,7 +35,7 @@ const Noitce = (props: Notice) => {
     type = 'success',
     isShow = true,
     onClose,
-    color
+    color,
   } = props
   const [flag, setFlag] = useState(isShow)
   let temp = useRef<NodeJS.Timeout>()
