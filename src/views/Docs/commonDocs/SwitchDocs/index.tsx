@@ -2,8 +2,7 @@ import React from 'react'
 import { Table, DemoBox } from 'src/components'
 import Marked from 'src/util/Marked'
 import { Switch } from 'src/UI'
-import './index.less'
-export default function() {
+export default function () {
   return (
     <>
       <h2>Switch 开关</h2>
@@ -35,7 +34,7 @@ const SwitchDemoCode = () => {
     text: `<Switch type="colorful" />
   <Switch />
   <Switch type="colorful" disabled={true} />
-  <Switch disabled={true} />`
+  <Switch disabled={true} />`,
   })
 }
 
@@ -45,7 +44,7 @@ const Api = () => {
     ['type', '开关的类型 可选值default | colorful', 'string', 'default'],
     ['initState', '开关初始状态 ture=>open | false=>close', 'boolean', 'true'],
     ['disabled', '禁用开关', 'boolean', 'false'],
-    ['onChange', '开关状态改变的回调函数', '(e:MouseEvent)=>void', 'undefined']
+    ['onChange', '开关状态改变的回调函数', '(e:MouseEvent)=>void', 'undefined'],
   ]
   return <Table thead={thead} tbody={tbody}></Table>
 }

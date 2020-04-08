@@ -39,7 +39,7 @@ interface Button {
   [key: string]: any
 }
 
-export default function(props: Button) {
+export default function (props: Button) {
   const {
     onClick,
     type = 'default',

@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { Table, DemoBox } from 'src/components'
 import Marked from 'src/util/Marked'
 import { Message, Button } from 'src/UI'
-import './index.less'
-export default function() {
+export default function () {
   return (
     <>
       <h2>Message 全局提示</h2>
@@ -32,153 +31,195 @@ const MessageDemo = () => {
   return (
     <>
       <Message notices={arr} />
-      <Button
-        type="success"
-        onClick={() => {
-          setArr((prev) => {
-            return prev.concat({
-              text: 'this is a success message',
-              type: 'success',
-              delay: 1000,
-              onClose: () => {
-                setArr((prev) => {
-                  prev.shift()
-                  return prev
-                })
-              }
+      <span className="rd-col">
+        <Button
+          type="success"
+          onClick={() => {
+            setArr((prev) => {
+              return prev.concat({
+                text: 'this is a success message',
+                type: 'success',
+                delay: 1000,
+                onClose: () => {
+                  setArr((prev) => {
+                    prev.shift()
+                    return prev
+                  })
+                },
+              })
             })
-          })
-        }}
-      >
-        get success message
-      </Button>
-      <Button
-        type="info"
-        onClick={() => {
-          setArr((prev) => {
-            return prev.concat({
-              text: 'this is a info message',
-              type: 'info',
-              delay: 1000,
-              onClose: () => {
-                setArr((prev) => {
-                  prev.shift()
-                  return prev
-                })
-              }
+          }}
+        >
+          get success message
+        </Button>
+      </span>
+      <span className="rd-col">
+        <Button
+          type="info"
+          onClick={() => {
+            setArr((prev) => {
+              return prev.concat({
+                text: 'this is a info message',
+                type: 'info',
+                delay: 1000,
+                onClose: () => {
+                  setArr((prev) => {
+                    prev.shift()
+                    return prev
+                  })
+                },
+              })
             })
-          })
-        }}
-      >
-        get info message
-      </Button>
-      <Button
-        type="warning"
-        onClick={() => {
-          setArr((prev) => {
-            return prev.concat({
-              text: 'this is a warning message',
-              type: 'warning',
-              delay: 1000,
-              onClose: () => {
-                setArr((prev) => {
-                  prev.shift()
-                  return prev
-                })
-              }
+          }}
+        >
+          get info message
+        </Button>
+      </span>
+      <span className="rd-col">
+        <Button
+          type="warning"
+          onClick={() => {
+            setArr((prev) => {
+              return prev.concat({
+                text: 'this is a warning message',
+                type: 'warning',
+                delay: 1000,
+                onClose: () => {
+                  setArr((prev) => {
+                    prev.shift()
+                    return prev
+                  })
+                },
+              })
             })
-          })
-        }}
-      >
-        get warning message
-      </Button>
-      <Button
-        type="danger"
-        onClick={() => {
-          setArr((prev) => {
-            return prev.concat({
-              text: 'this is a error message',
-              type: 'error',
-              delay: 1000,
-              onClose: () => {
-                setArr((prev) => {
-                  prev.shift()
-                  return prev
-                })
-              }
+          }}
+        >
+          get warning message
+        </Button>
+      </span>
+      <span className="rd-col">
+        <Button
+          type="danger"
+          onClick={() => {
+            setArr((prev) => {
+              return prev.concat({
+                text: 'this is a error message',
+                type: 'error',
+                delay: 1000,
+                onClose: () => {
+                  setArr((prev) => {
+                    prev.shift()
+                    return prev
+                  })
+                },
+              })
             })
-          })
-        }}
-      >
-        get error message
-      </Button>
+          }}
+        >
+          get error message
+        </Button>
+      </span>
     </>
   )
 }
 const MessageDemoCode = () => {
   return Marked({
-    text: ` <Message notices={arr} />
-    <Button
-      type="success"
-      onClick={() => {
-        setArr((prev) => {
-          return prev.concat({
-            text: 'this is a success message',
-            type: 'success',
-            delay: 1000,
-            onClose: () => {
-              setArr((prev) => {
-                prev.shift()
-                return prev
-              })
-            }
-          })
-        })
-      }}
-    >
-      get success message
-    </Button>
-    <Button
-      type="info"
-      onClick={() => {
-        setArr((prev) => {
-          return prev.concat({
-            text: 'this is a info message',
-            type: 'info',
-            delay: 1000,
-            onClose: () => {
-              setArr((prev) => {
-                prev.shift()
-                return prev
-              })
-            }
-          })
-        })
-      }}
-    >
-      get info message
-    </Button>
-    <Button
-      type="warning"
-      onClick={() => {
-        setArr((prev) => {
-          return prev.concat({
-            text: 'this is a warning message',
-            type: 'warning',
-            delay: 1000,
-            onClose: () => {
-              setArr((prev) => {
-                prev.shift()
-                return prev
-              })
-            }
-          })
-        })
-      }}
-    >
-      get warning message
-    </Button>
-    <Button`
+    text: `const MessageDemo = () => {
+      const [arr, setArr] = useState<Array<Notice>>([])
+      return (
+        <>
+          <Message notices={arr} />
+          <span className="rd-col">
+            <Button
+              type="success"
+              onClick={() => {
+                setArr((prev) => {
+                  return prev.concat({
+                    text: 'this is a success message',
+                    type: 'success',
+                    delay: 1000,
+                    onClose: () => {
+                      setArr((prev) => {
+                        prev.shift()
+                        return prev
+                      })
+                    },
+                  })
+                })
+              }}
+            >
+              get success message
+            </Button>
+          </span>
+          <span className="rd-col">
+            <Button
+              type="info"
+              onClick={() => {
+                setArr((prev) => {
+                  return prev.concat({
+                    text: 'this is a info message',
+                    type: 'info',
+                    delay: 1000,
+                    onClose: () => {
+                      setArr((prev) => {
+                        prev.shift()
+                        return prev
+                      })
+                    },
+                  })
+                })
+              }}
+            >
+              get info message
+            </Button>
+          </span>
+          <span className="rd-col">
+            <Button
+              type="warning"
+              onClick={() => {
+                setArr((prev) => {
+                  return prev.concat({
+                    text: 'this is a warning message',
+                    type: 'warning',
+                    delay: 1000,
+                    onClose: () => {
+                      setArr((prev) => {
+                        prev.shift()
+                        return prev
+                      })
+                    },
+                  })
+                })
+              }}
+            >
+              get warning message
+            </Button>
+          </span>
+          <span className="rd-col">
+            <Button
+              type="danger"
+              onClick={() => {
+                setArr((prev) => {
+                  return prev.concat({
+                    text: 'this is a error message',
+                    type: 'error',
+                    delay: 1000,
+                    onClose: () => {
+                      setArr((prev) => {
+                        prev.shift()
+                        return prev
+                      })
+                    },
+                  })
+                })
+              }}
+            >
+              get error message
+            </Button>
+          </span>
+        </>
+      )
+    }`,
   })
 }
 
@@ -189,11 +230,11 @@ const Api = () => {
       'type',
       'message的类型 可选值 success | info | warning | error | loading',
       'string',
-      'success'
+      'success',
     ],
     ['delay', 'message关闭的时延', 'number', '0'],
     ['color', 'message为loading状态时 spin的颜色', 'string', '#3eaf7c'],
-    ['onClose', 'message关闭的回调函数', '()=>void', 'undefined']
+    ['onClose', 'message关闭的回调函数', '()=>void', 'undefined'],
   ]
   return <Table thead={thead} tbody={tbody}></Table>
 }

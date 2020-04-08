@@ -3,7 +3,7 @@ import { Table, DemoBox } from 'src/components'
 import Marked from 'src/util/Marked'
 import { Spin, Switch, Alert } from 'src/UI'
 import './index.less'
-export default function() {
+export default function () {
   return (
     <>
       <h2>Spin 加载中</h2>
@@ -51,7 +51,7 @@ const SpinDemoCode = () => {
     <Spin size="large" color="#1890ff" spinning={true} />
     <Spin size="small" color="#f81d22" spinning={true} simple={true} />
     <Spin spinning={true} simple={true} />
-    <Spin size="large" color="#1890ff" spinning={true} simple={true} />`
+    <Spin size="large" color="#1890ff" spinning={true} simple={true} />`,
   })
 }
 
@@ -142,7 +142,7 @@ const SpinTipDemoCode = () => {
       }
     }
   }
-    `
+    `,
   })
 }
 const Api = () => {
@@ -153,7 +153,7 @@ const Api = () => {
     ['size', '控制spin的大小 可选default | small | large', 'string', 'default'],
     ['color', '控制spin的主题颜色', 'string', '#3eaf7c'],
     ['tip', 'spin的描述文案', 'string', 'undefined'],
-    ['delay', '延迟显示加载效果的时间（防止闪烁）', 'number', '0']
+    ['delay', '延迟显示加载效果的时间（防止闪烁）', 'number', '0'],
   ]
   return <Table thead={thead} tbody={tbody}></Table>
 }

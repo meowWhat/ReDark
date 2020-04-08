@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import './Message.less'
 import { Spin } from 'src/UI'
 import getIcon from 'src/util/getIconClass'
+
 /* message 容器 */
 interface Message {
   notices: Array<Notice>

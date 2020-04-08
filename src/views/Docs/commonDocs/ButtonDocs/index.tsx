@@ -1,5 +1,4 @@
 import React, { cloneElement } from 'react'
-import './index.less'
 import { DemoBox, Table } from 'src/components'
 import { Button, ButtonGroup } from 'src/UI'
 import Marked from 'src/util/Marked'

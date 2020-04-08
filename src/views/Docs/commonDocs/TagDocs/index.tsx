@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import { Table, DemoBox } from 'src/components'
 import Marked from 'src/util/Marked'
 import { Tag } from 'src/UI'
-import './index.less'
-export default function() {
+export default function () {
   return (
     <>
       <h2>Tag 标签</h2>
@@ -63,7 +62,7 @@ const TypeTagCode = () => {
     <Tag type="cyan">cyan</Tag>
     <Tag type="blue">blue</Tag>
     <Tag type="geekblue">geekblue</Tag>
-    <Tag type="purple">purple</Tag>`
+    <Tag type="purple">purple</Tag>`,
   })
 }
 
@@ -83,7 +82,7 @@ const ColorTagCode = () => {
     text: `  <Tag color="#f50">#f50</Tag>
     <Tag color="#2db7f5">#2db7f5</Tag>
     <Tag color="#87d068">#87d068</Tag>
-    <Tag color="#108ee9">#108ee9</Tag>`
+    <Tag color="#108ee9">#108ee9</Tag>`,
   })
 }
 /* closable 属性展示 */
@@ -116,7 +115,7 @@ const ClosableTagCode = () => {
         </>
       )
     }
-    `
+    `,
   })
 }
 
@@ -127,7 +126,7 @@ const Api = () => {
     ['color', '自定义颜色', 'string', 'undefined'],
     ['closable', '标签是否可关闭', 'boolean', 'false'],
     ['visible', '标签是否可见', 'boolean', 'true'],
-    ['onClose', '标签关闭的回调函数', '(e: MouseEvent )=>void', 'undefined']
+    ['onClose', '标签关闭的回调函数', '(e: MouseEvent )=>void', 'undefined'],
   ]
   return <Table thead={thead} tbody={tbody}></Table>
 }

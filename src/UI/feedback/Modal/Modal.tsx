@@ -20,6 +20,8 @@ export default function (props: Modal) {
     footer,
     ...res
   } = props
+
+  
   return (
     <div className={isShow ? 'rd-modal' : 'rd-modal-hide'} {...res}>
       <div className="rd-modal-content">

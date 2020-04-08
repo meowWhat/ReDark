@@ -11,6 +11,8 @@ interface Alert {
   onClose?: (e: React.MouseEvent) => void
   [key: string]: any
 }
+
+
 export default function(props: Alert) {
   const {
     type,

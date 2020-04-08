@@ -13,6 +13,9 @@ import {
   SkeletonInput,
 } from './feedback'
 
+//dataDisplay
+import { Badge } from './dataDisplay'
+
 export {
   Button,
   ButtonGroup,
@@ -27,4 +30,5 @@ export {
   Skeleton,
   SkeletonAvatar,
   SkeletonInput,
+  Badge,
 }

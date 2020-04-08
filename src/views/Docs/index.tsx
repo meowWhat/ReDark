@@ -5,6 +5,7 @@ import './index.less'
 
 import { Sidebar } from 'src/components'
 import { Spin } from 'src/UI'
+
 import docsManage from './DocsManage'
 
 /* 生成侧边栏路由表(link 表) */
@@ -42,6 +43,10 @@ const sidebarGroup = [
     ],
     title: '反馈',
   },
+  {
+    group: [{ url: '/docs/badge', text: 'Badge', chineseText: '徽标' }],
+    title: '数据展示',
+  },
 ]
 
 /* 生成组件对应的路由表(path 表) */
@@ -64,18 +69,18 @@ const RouteRender = () => {
   return (
     <main className="docs-main">
       <section className="docs-content">
-        {routerTable.map((el) => {
-          const { comp: Comp, path } = el
-          return (
-            <Route path={path} key={path}>
-              <Suspense fallback={<Spin delay={100} spinning={true} />}>
+        <Suspense fallback={<Spin delay={100} spinning={true} />}>
+          {routerTable.map((el) => {
+            const { comp: Comp, path } = el
+            return (
+              <Route path={path} key={path}>
                 <Comp />
-              </Suspense>
-            </Route>
-          )
-        })}
+              </Route>
+            )
+          })}
+        </Suspense>
         <Route path="/docs">
-          <Redirect to="/docs/button"></Redirect>
+          <Redirect to="/docs/button" />
         </Route>
       </section>
     </main>
