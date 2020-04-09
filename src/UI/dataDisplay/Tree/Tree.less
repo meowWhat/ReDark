@@ -1,0 +1,43 @@
+.rd-tree {
+  font-size: 16px;
+  font-weight: 400;
+  overflow: hidden;
+  transition: opacity 0.3s;
+  .rd-tree-icon {
+    display: inline-block;
+    width: 16px;
+  }
+  .rd-tree-tittle {
+    margin-left: 2px;
+  }
+  .rd-tree-content {
+    cursor: pointer;
+    padding: 10px 0;
+    transition: padding 0.3s;
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+  li {
+    margin: 0;
+  }
+}
+
+.rd-tree:nth-child(n + 1) {
+  margin-left: 12px;
+}
+
+.rd-tree-open {
+  opacity: 1;
+  .rd-tree-content {
+    padding: 10px 0;
+  }
+}
+
+.rd-tree-close {
+  .rd-tree-content {
+    padding: 0;
+  }
+  opacity: 0;
+  height: 0;
+}

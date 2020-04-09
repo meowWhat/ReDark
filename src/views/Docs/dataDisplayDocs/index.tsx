@@ -2,5 +2,6 @@
 
 import React from 'react'
 const BadgeDocs = React.lazy(() => import('./BadgeDocs'))
+const TreeDocs = React.lazy(() => import('./TreeDocs'))
 
-export { BadgeDocs }
+export { BadgeDocs, TreeDocs }

@@ -14,7 +14,7 @@ import {
 } from './feedback'
 
 //dataDisplay
-import { Badge } from './dataDisplay'
+import { Badge, Tree } from './dataDisplay'
 
 export {
   Button,
@@ -31,4 +31,5 @@ export {
   SkeletonAvatar,
   SkeletonInput,
   Badge,
+  Tree,
 }

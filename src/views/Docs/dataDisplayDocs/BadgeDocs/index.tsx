@@ -104,10 +104,14 @@ const ControlDemo = () => {
             onClick={() => setCount((pre) => pre - 1)}
             disabled={count <= 0}
           >
-            ➖
+            <span role="img" aria-labelledby="decrease">
+              ➖
+            </span>
           </Button>
           <Button type="success" onClick={() => setCount((pre) => pre + 1)}>
-            ➕
+            <span role="img" aria-labelledby="increase">
+              ➕
+            </span>
           </Button>
         </ButtonGroup>
       </span>
@@ -148,10 +152,14 @@ const ControlDemoCoded = () => {
                 onClick={() => setCount((pre) => pre - 1)}
                 disabled={count <= 0}
               >
-                ➖
+               <span role="img" aria-labelledby="increase">
+               ➖
+               </span>
               </Button>
               <Button type="success" onClick={() => setCount((pre) => pre + 1)}>
-                ➕
+              <span role="img" aria-labelledby="increase">
+              ➕
+              </span>
               </Button>
             </ButtonGroup>
           </span>
@@ -177,7 +185,7 @@ const Api = () => {
     ['color', '自定义Badge的背景颜色', 'string', '无'],
     [
       'count',
-      '展示的数字,大于overflowCount显示为${overflowCount}+ 小于等于0时隐藏',
+      '展示的数字,大于overflowCount显示为 overflowCount&&+ 小于等于0时隐藏',
       'number',
       '0',
     ],

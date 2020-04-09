@@ -44,7 +44,10 @@ const sidebarGroup = [
     title: '反馈',
   },
   {
-    group: [{ url: '/docs/badge', text: 'Badge', chineseText: '徽标' }],
+    group: [
+      { url: '/docs/badge', text: 'Badge', chineseText: '徽标' },
+      { url: '/docs/tree', text: 'Tree', chineseText: '树形控件' },
+    ],
     title: '数据展示',
   },
 ]
