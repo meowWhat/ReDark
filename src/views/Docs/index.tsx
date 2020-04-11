@@ -48,6 +48,7 @@ const sidebarGroup = [
       { url: '/docs/badge', text: 'Badge', chineseText: '徽标' },
       { url: '/docs/tree', text: 'Tree', chineseText: '树形控件' },
       { url: '/docs/statistic', text: 'Statistic', chineseText: '统计数值' },
+      { url: '/docs/tabs', text: 'Tabs', chineseText: '标签页' },
     ],
     title: '数据展示',
   },

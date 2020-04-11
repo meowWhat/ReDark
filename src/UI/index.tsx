@@ -14,7 +14,7 @@ import {
 } from './feedback'
 
 //dataDisplay
-import { Badge, Tree, Statistic } from './dataDisplay'
+import { Badge, Tree, Statistic, Tabs } from './dataDisplay'
 
 export {
   Button,
@@ -33,4 +33,5 @@ export {
   Badge,
   Tree,
   Statistic,
+  Tabs,
 }

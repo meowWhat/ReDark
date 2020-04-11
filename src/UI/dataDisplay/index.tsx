@@ -1,4 +1,5 @@
 import Badge from './Badge/Badge'
 import Tree from './Tree/Tree'
 import Statistic from './Statistic/Statistic'
-export { Badge, Tree, Statistic }
+import Tabs from './Tabs/Tabs'
+export { Badge, Tree, Statistic, Tabs }
