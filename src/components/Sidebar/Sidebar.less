@@ -28,7 +28,25 @@
   border-right: 1px solid #eaecef;
   padding: 25px 0;
   overflow-y: scroll;
+  /* 设置滚动条的样式 */
   &::-webkit-scrollbar {
-    width: 0;
+    width: 0px;
+  }
+  &:hover {
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+    /* 滚动槽 */
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+    }
+    /* 滚动条滑块 */
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    &::-webkit-scrollbar-thumb:window-inactive {
+      background: rgba(255, 0, 0, 0.4);
+    }
   }
 }

@@ -49,6 +49,7 @@ const sidebarGroup = [
       { url: '/docs/tree', text: 'Tree', chineseText: '树形控件' },
       { url: '/docs/statistic', text: 'Statistic', chineseText: '统计数值' },
       { url: '/docs/tabs', text: 'Tabs', chineseText: '标签页' },
+      { url: '/docs/carousel', text: 'Carousel', chineseText: '走马灯' },
     ],
     title: '数据展示',
   },

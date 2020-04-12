@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useState, useRef } from 'react'
+import React, { ReactNode, useEffect, useState, useRef, useMemo } from 'react'
 import './Statistic.less'
 import fmoney from 'src/util/fmoney'
 import fdate from 'src/util/fdate'
@@ -23,9 +23,14 @@ function Statistic(props: Statistic) {
     precision,
     ...res
   } = props
+
+  const fmoneyRes = useMemo(() => {
+    return fmoney(value, precision)
+  }, [value, precision])
+
   const initValue = () => {
     if (precision) {
-      return fmoney(value, precision)
+      return fmoneyRes
     }
     return value.toLocaleString()
   }
