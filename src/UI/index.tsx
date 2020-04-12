@@ -16,6 +16,9 @@ import {
 //dataDisplay
 import { Badge, Tree, Statistic, Tabs, Carousel } from './dataDisplay'
 
+//dataEntry
+import { Rate } from './dataEntry'
+
 export {
   Button,
   ButtonGroup,
@@ -35,4 +38,5 @@ export {
   Statistic,
   Tabs,
   Carousel,
+  Rate,
 }

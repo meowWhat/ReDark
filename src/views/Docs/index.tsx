@@ -53,6 +53,10 @@ const sidebarGroup = [
     ],
     title: '数据展示',
   },
+  {
+    group: [{ url: '/docs/rate', text: 'Rate', chineseText: '评分' }],
+    title: '数据录入',
+  },
 ]
 
 /* 生成组件对应的路由表(path 表) */

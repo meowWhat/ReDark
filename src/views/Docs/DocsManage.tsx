@@ -3,4 +3,6 @@
 import * as common from './commonDocs'
 import * as feedback from './feedbackDocs'
 import * as dataDisplay from './dataDisplayDocs'
-export default { ...common, ...feedback, ...dataDisplay }
+import * as dataEntry from './dataEntryDocs'
+
+export default { ...common, ...feedback, ...dataDisplay, ...dataEntry }
