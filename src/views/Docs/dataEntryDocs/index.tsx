@@ -1,5 +1,7 @@
 import React from 'react'
 
 const RateDocs = React.lazy(() => import('./RateDocs'))
+const InputDocs = React.lazy(() => import('./InputDocs'))
+const SelectDocs = React.lazy(() => import('./SelectDocs'))
 
-export { RateDocs }
+export { RateDocs, InputDocs, SelectDocs }

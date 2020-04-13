@@ -20,6 +20,26 @@ const sidebarGroup = [
     ],
     title: '通用',
   },
+
+  {
+    group: [
+      { url: '/docs/rate', text: 'Rate', chineseText: '评分' },
+      { url: '/docs/select', text: 'Select', chineseText: '选择器' },
+      { url: '/docs/input', text: 'Input', chineseText: '输入框' },
+    ],
+
+    title: '数据录入',
+  },
+  {
+    group: [
+      { url: '/docs/badge', text: 'Badge', chineseText: '徽标' },
+      { url: '/docs/tree', text: 'Tree', chineseText: '树形控件' },
+      { url: '/docs/statistic', text: 'Statistic', chineseText: '统计数值' },
+      { url: '/docs/tabs', text: 'Tabs', chineseText: '标签页' },
+      { url: '/docs/carousel', text: 'Carousel', chineseText: '走马灯' },
+    ],
+    title: '数据展示',
+  },
   {
     group: [
       { url: '/docs/alert', text: 'Alert', chineseText: '警告' },
@@ -42,20 +62,6 @@ const sidebarGroup = [
       { url: '/docs/message', text: 'Message', chineseText: '全局提示' },
     ],
     title: '反馈',
-  },
-  {
-    group: [
-      { url: '/docs/badge', text: 'Badge', chineseText: '徽标' },
-      { url: '/docs/tree', text: 'Tree', chineseText: '树形控件' },
-      { url: '/docs/statistic', text: 'Statistic', chineseText: '统计数值' },
-      { url: '/docs/tabs', text: 'Tabs', chineseText: '标签页' },
-      { url: '/docs/carousel', text: 'Carousel', chineseText: '走马灯' },
-    ],
-    title: '数据展示',
-  },
-  {
-    group: [{ url: '/docs/rate', text: 'Rate', chineseText: '评分' }],
-    title: '数据录入',
   },
 ]
 
