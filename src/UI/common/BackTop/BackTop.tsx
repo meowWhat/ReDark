@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, useCallback } from 'react'
 import './BackTop.less'
 interface BackTop {
   showHeight?: number
@@ -8,7 +8,7 @@ interface BackTop {
   size?: number
   [key: string]: any
 }
-export default function(props: BackTop) {
+export default function (props: BackTop) {
   const {
     right = 40,
     bottom = 40,
@@ -36,23 +36,23 @@ export default function(props: BackTop) {
       }
     })
   }
-  useEffect(() => {
-    const scroll = () => {
-      if (window.scrollY > showHeight) {
-        if (visible === 'hidden') {
-          setVsible('visible')
-        }
-      } else {
-        if (visible === 'visible') {
-          setVsible('hidden')
-        }
+  const scroll = useCallback(() => {
+    if (window.scrollY > showHeight) {
+      if (visible === 'hidden') {
+        setVsible('visible')
+      }
+    } else {
+      if (visible === 'visible') {
+        setVsible('hidden')
       }
     }
+  }, [visible, showHeight])
+  useEffect(() => {
     document.addEventListener('scroll', scroll)
     return () => {
       document.removeEventListener('scroll', scroll)
     }
-  }, [visible, showHeight])
+  }, [scroll])
 
   return (
     <div
@@ -61,7 +61,7 @@ export default function(props: BackTop) {
       style={{
         right: `${right}px`,
         bottom: `${bottom}px`,
-        visibility: visible
+        visibility: visible,
       }}
       {...res}
     >

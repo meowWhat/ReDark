@@ -14,17 +14,17 @@ const navItems = [
   {
     text: '博客地址',
     url: 'https://www.zhihu.com/people/chen-jia-hao-66-95/columns',
-    isStaticRouter: false
+    isStaticRouter: false,
   },
   {
     text: 'GitHub',
     url: 'https://github.com/meowWhat/ReDark',
-    isStaticRouter: false
-  }
+    isStaticRouter: false,
+  },
 ]
 const homeImg = {
   src: logo,
-  alt: 'ReDark'
+  alt: 'ReDark',
 }
 
 function App(props: RouteComponentProps) {

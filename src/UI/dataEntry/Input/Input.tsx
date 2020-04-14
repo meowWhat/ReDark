@@ -7,7 +7,9 @@ interface Input {
   prefix?: string | ReactNode
   suffix?: string | ReactNode
   value?: string
-  onChange?: () => {}
+  onChange?: (e?: React.ChangeEvent<HTMLInputElement>) => void
+  onClick?: (e?: React.MouseEvent<HTMLDivElement, MouseEvent>) => void
+  defaultValue?: string
   [key: string]: any
 }
 export default function (props: Input) {
@@ -18,6 +20,8 @@ export default function (props: Input) {
     suffix,
     value,
     onChange,
+    onClick,
+    defaultValue,
     ...res
   } = props
   const [flag, setFlag] = useState(true)
@@ -52,13 +56,14 @@ export default function (props: Input) {
     return className
   }
   return (
-    <div className={initInputClass()}>
+    <div className={initInputClass()} onClick={onClick}>
       {prefix && <span className="rd-input-prefix-icon">{prefix}</span>}
       <input
         type={flag ? type : 'text'}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        defaultValue={defaultValue}
         {...res}
       />
       {suffix && <span className="rd-input-suffix-icon">{suffix}</span>}

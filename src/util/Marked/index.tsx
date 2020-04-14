@@ -1,4 +1,4 @@
-import React, { createRef, useEffect } from 'react'
+import React, { useRef, useEffect, useMemo } from 'react'
 import marked from 'marked'
 import '../../../node_modules/highlight.js/styles/atom-one-dark-reasonable.css'
 import hljs from 'highlight.js'
@@ -11,21 +11,24 @@ marked.setOptions({
   breaks: true,
   smartLists: true,
   smartypants: true,
-  highlight: function(code) {
+  highlight: function (code) {
     return hljs.highlightAuto(code).value
-  }
+  },
 })
 
-export default function(props: { text: string }) {
-  let el = createRef<HTMLDivElement>()
-  const text = `\`\`\`javascript
-  ${props.text}
-  \`\`\``
+export default function (props: { text: string }) {
+  let el = useRef<any>()
+  const getMarked = useMemo(() => {
+    let text = `\`\`\`javascript
+    ${props.text}
+\`\`\``
+    return marked(text)
+  }, [props.text])
   useEffect(() => {
     if (el.current) {
-      el.current.innerHTML = marked(text)
+      el.current.innerHTML = getMarked
     }
-  })
+  }, [getMarked, el])
   const copy = () => {
     const input = document.createElement('input')
     document.body.appendChild(input)

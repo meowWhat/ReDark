@@ -21,12 +21,12 @@ interface Tag {
     | 'purple'
   closable?: boolean
   visible?: boolean
-  onClose?: () => void
+  onClose?: (e: React.MouseEvent<HTMLSpanElement>) => void
   children?: any
   className?: string
   [key: string]: any
 }
-export default function(props: Tag) {
+export default function (props: Tag) {
   const {
     color = undefined,
     type = 'default',
