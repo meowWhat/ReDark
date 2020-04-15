@@ -17,7 +17,7 @@ import {
 import { Badge, Tree, Statistic, Tabs, Carousel } from './dataDisplay'
 
 //dataEntry
-import { Rate, Input, InputWithAddon, Select } from './dataEntry'
+import { Rate, Input, InputWithAddon, Select, Cascader } from './dataEntry'
 
 export {
   Button,
@@ -42,4 +42,5 @@ export {
   Input,
   InputWithAddon,
   Select,
+  Cascader,
 }

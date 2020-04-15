@@ -25,6 +25,7 @@ interface Select {
     | 'purple'
   >
   onChange?: (value: string | string[]) => void
+  [key: string]: any
 }
 export default function (props: Select) {
   const {
@@ -38,11 +39,13 @@ export default function (props: Select) {
     mode = 'tags',
     onChange,
     tagType,
+    ...res
   } = props
 
   const getRightdefaultValue = useCallback(
     (fn: React.Dispatch<React.SetStateAction<number>>) => {
       //获取正确的defaultValue
+
       if (options && Array.isArray(options) && options.length > 0) {
         //options 为数组 并且长度大于1
         if (defaultValue) {
@@ -182,7 +185,7 @@ export default function (props: Select) {
     })
   }
   return (
-    <div className={initSelectClass()}>
+    <div className={initSelectClass()} {...res}>
       {/* select单选框 */}
       {mode === 'tags' ? (
         <Input

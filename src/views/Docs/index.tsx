@@ -26,6 +26,7 @@ const sidebarGroup = [
       { url: '/docs/rate', text: 'Rate', chineseText: '评分' },
       { url: '/docs/select', text: 'Select', chineseText: '选择器' },
       { url: '/docs/input', text: 'Input', chineseText: '输入框' },
+      { url: '/docs/cascader', text: 'Cascader', chineseText: '级联选择器' },
     ],
 
     title: '数据录入',
