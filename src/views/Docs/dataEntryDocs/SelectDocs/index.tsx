@@ -140,6 +140,7 @@ const multipleDemo = () => {
           placeholder={'请选择食物'}
           mode="multiple"
           defaultValues={['黄金糕', '龙须面']}
+          tagType={['geekblue', 'lime', 'purple', 'default']}
           optionsDisabledarr={[4]}
         />
       </div>
@@ -191,6 +192,12 @@ const Api = () => {
     ['disabled', 'select是否禁用', 'boolean', 'false'],
     ['optionsDisabledarr', '设置禁用选项', 'number[]', '[]'],
     ['allowClear', '单选框是否允许清除', 'boolean', 'false'],
+    [
+      'tagType',
+      '多选框标签的颜色,与options一一对应,匹配失败则为default',
+      'Array<Tag.type>',
+      '[]',
+    ],
   ]
   return <Table thead={thead} tbody={tbody}></Table>
 }

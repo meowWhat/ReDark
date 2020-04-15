@@ -1,7 +1,7 @@
 import React from 'react'
 import { Table, DemoBox } from 'src/components'
 import Marked from 'src/util/Marked'
-import { Input } from 'src/UI'
+import { Input, InputWithAddon, Select, Button } from 'src/UI'
 export default function () {
   return (
     <>
@@ -14,13 +14,15 @@ export default function () {
         Code={basicDemoCode()}
       />
       <DemoBox
-        title="基础使用"
-        desp="当type为password时默认提供suffix,当然你也可以自定义 prefix && suffix"
-        Components={basicDemo()}
-        Code={basicDemoCode()}
+        title="使用插件"
+        desp="通过HOC手段增强input的功能"
+        Components={addonDemo()}
+        Code={addonDemoCode()}
       />
-      <h2>Api</h2>
+      <h2>Input Api</h2>
       <Api />
+      <h2>InputWithAddon Api</h2>
+      <Api2 />
     </>
   )
 }
@@ -28,17 +30,13 @@ export default function () {
 const basicDemo = () => {
   return (
     <form>
-      <div className="rd-row">
-        <div className="rd-col" style={{ width: '65%' }}>
-          <Input type="text" placeholder="请输入账号" />
-        </div>
+      <div className="rd-row" style={{ width: '65%' }}>
+        <Input type="text" placeholder="请输入账号" />
       </div>
-      <div className="rd-row">
-        <div className="rd-col" style={{ width: '65%' }}>
-          <Input type="password" placeholder="请输入密码" />
-        </div>
+      <div className="rd-row" style={{ width: '65%' }}>
+        <Input type="password" placeholder="请输入密码" />
       </div>
-      <div className="rd-col" style={{ width: '65%' }}>
+      <div style={{ width: '65%' }}>
         <Input
           type="text"
           placeholder="enter your username"
@@ -51,21 +49,195 @@ const basicDemo = () => {
 }
 const basicDemoCode = () => {
   return Marked({
-    text: ` `,
+    text: `/* basic */
+    const basicDemo = () => {
+      return (
+        <form>
+          <div className="rd-row" style={{ width: '65%' }}>
+            <Input type="text" placeholder="请输入账号" />
+          </div>
+          <div className="rd-row" style={{ width: '65%' }}>
+            <Input type="password" placeholder="请输入密码" />
+          </div>
+          <div style={{ width: '65%' }}>
+            <Input
+              type="text"
+              placeholder="enter your username"
+              prefix={<span className="iconfont icon-account" />}
+              suffix={<span className="iconfont icon-info" />}
+            />
+          </div>
+        </form>
+      )
+    }`,
+  })
+}
+/* addon */
+const WithAddon = InputWithAddon(Input)
+const addonDemo = () => {
+  return (
+    <>
+      <div className="rd-row" style={{ width: '65%' }}>
+        <WithAddon
+          placeholder="mysite"
+          addonBefore="http://"
+          addonAfter=".com"
+        />
+      </div>
+
+      <div className="rd-row" style={{ width: '65%' }}>
+        <WithAddon placeholder="mysite" addonBefore="http://" suffix=".com" />
+      </div>
+      <div className="rd-row" style={{ width: '65%' }}>
+        <WithAddon
+          placeholder="mysite"
+          addonBefore={
+            <Select options={['http://', 'https://']} defaultValue="http://" />
+          }
+          addonAfter={
+            <Select options={['.com', '.cn', '.site']} defaultValue=".com" />
+          }
+        />
+      </div>
+      <div className="rd-row" style={{ width: '65%' }}>
+        <WithAddon
+          placeholder="mysite"
+          addonBefore={
+            <div style={{ width: '180px' }}>
+              <Select
+                options={['自定义宽度', '适于过长的选项']}
+                defaultValue="自定义宽度"
+              />
+            </div>
+          }
+        />
+      </div>
+      <div className="rd-row" style={{ width: '65%' }}>
+        <WithAddon
+          placeholder="mysite"
+          addonAfter={
+            <span
+              className="iconfont icon-set"
+              style={{ fontSize: '20px' }}
+            ></span>
+          }
+        />
+      </div>
+      <div className="rd-row" style={{ width: '65%' }}>
+        <WithAddon
+          placeholder="mysite"
+          addonAfter={<Button type="success">Search</Button>}
+        />
+      </div>
+      <div className="rd-row" style={{ width: '65%' }}>
+        <WithAddon
+          placeholder="mysite"
+          addonAfter={
+            <Button type="success">
+              <span className="iconfont icon-sousuo"></span>
+            </Button>
+          }
+        />
+      </div>
+    </>
+  )
+}
+const addonDemoCode = () => {
+  return Marked({
+    text: `import { Input, InputWithAddon, Select } from 'src/UI'
+    /* addon */
+const WithAddon = InputWithAddon(Input)
+const addonDemo = () => {
+  return (
+    <>
+      <div className="rd-row" style={{ width: '65%' }}>
+        <WithAddon
+          placeholder="mysite"
+          addonBefore="http://"
+          addonAfter=".com"
+        />
+      </div>
+
+      <div className="rd-row" style={{ width: '65%' }}>
+        <WithAddon placeholder="mysite" addonBefore="http://" suffix=".com" />
+      </div>
+      <div className="rd-row" style={{ width: '65%' }}>
+        <WithAddon
+          placeholder="mysite"
+          addonBefore={
+            <Select options={['http://', 'https://']} defaultValue="http://" />
+          }
+          addonAfter={
+            <Select options={['.com', '.cn', '.site']} defaultValue=".com" />
+          }
+        />
+      </div>
+      <div className="rd-row" style={{ width: '65%' }}>
+        <WithAddon
+          placeholder="mysite"
+          addonBefore={
+            <div style={{ width: '180px' }}>
+              <Select
+                options={['自定义宽度', '适于过长的选项']}
+                defaultValue="自定义宽度"
+              />
+            </div>
+          }
+        />
+      </div>
+      <div className="rd-row" style={{ width: '65%' }}>
+        <WithAddon
+          placeholder="mysite"
+          addonAfter={
+            <span
+              className="iconfont icon-set"
+              style={{ fontSize: '20px' }}
+            ></span>
+          }
+        />
+      </div>
+      <div className="rd-row" style={{ width: '65%' }}>
+        <WithAddon
+          placeholder="mysite"
+          addonAfter={<Button type="success">Search</Button>}
+        />
+      </div>
+      <div className="rd-row" style={{ width: '65%' }}>
+        <WithAddon
+          placeholder="mysite"
+          addonAfter={
+            <Button type="success">
+              <span className="iconfont icon-sousuo"></span>
+            </Button>
+          }
+        />
+      </div>
+    </>
+  )
+}`,
   })
 }
 
 const Api = () => {
   const thead = ['属性', '说明', '类型', '默认值']
   const tbody = [
-    ['allowHarl', '是否允许半选', 'boolean', 'false'],
-    ['allowClear', '是否允许再次点击后清除', 'boolean', 'true'],
-    ['value', '当前数,受控值,可以用作设置默认值', 'number', '0'],
-    ['onChange', '选择时的回调 ', '(value: number)=>void', 'undefined'],
-    ['disabled', '只读，无法进行交互', 'boolean', 'false'],
-    ['count', '	star 总数', 'number', '5'],
-    ['character', '自定义字符', 'ReactNode|string', 'undefined'],
-    ['characterStyle', '自定义字符样式', 'React.CSSProperties', 'undefined'],
+    ['placehodler', '预设占位符', 'string', '请输入内容'],
+    ['type', '输入类型', 'text|password', 'text'],
+    ['prefix', '前缀', 'string|ReactNode', '无'],
+    ['sufffix', '后缀', 'string|ReactNode', '无'],
+    ['value', 'input受控制', 'string', "''"],
+    ['onChange', 'value改变回调函数', '(e:changeEvent)=>void', 'undefined'],
+    ['onClick', 'input点击时回调函数', '(e:MouseEvent)=>void', 'undefined'],
+    ['defaultValue', 'input的defaultvalue', 'string', "''"],
+  ]
+  return <Table thead={thead} tbody={tbody}></Table>
+}
+
+const Api2 = () => {
+  const thead = ['属性', '说明', '类型', '默认值']
+  const tbody = [
+    ['addonBefore', '设置前置插件', 'string|ReactNode', '无'],
+    ['addonAfter', '设置后置插件', 'string|ReactNode', '无'],
   ]
   return <Table thead={thead} tbody={tbody}></Table>
 }

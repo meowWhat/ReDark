@@ -10,6 +10,20 @@ interface Select {
   placeholder?: string
   allowClear?: boolean
   mode?: 'multiple' | 'tags'
+  tagType?: Array<
+    | 'default'
+    | 'magenta'
+    | 'red'
+    | 'volcano'
+    | 'orange'
+    | 'gold'
+    | 'lime'
+    | 'green'
+    | 'cyan'
+    | 'blue'
+    | 'geekblue'
+    | 'purple'
+  >
   onChange?: (value: string | string[]) => void
 }
 export default function (props: Select) {
@@ -23,6 +37,7 @@ export default function (props: Select) {
     allowClear = false,
     mode = 'tags',
     onChange,
+    tagType,
   } = props
 
   const getRightdefaultValue = useCallback(
@@ -217,6 +232,7 @@ export default function (props: Select) {
                   e.stopPropagation()
                   setMultipleModeState(index)
                 }}
+                type={(tagType && tagType[index]) || 'default'}
               >
                 {el}
               </Tag>

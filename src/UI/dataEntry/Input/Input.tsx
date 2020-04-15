@@ -1,7 +1,7 @@
 import React, { ReactNode, useState } from 'react'
 import './Input.less'
 
-interface Input {
+export interface InputProps {
   placeholder?: string
   type?: 'text' | 'password'
   prefix?: string | ReactNode
@@ -12,7 +12,7 @@ interface Input {
   defaultValue?: string
   [key: string]: any
 }
-export default function (props: Input) {
+export function Input(props: InputProps) {
   let {
     placeholder = '请输入内容',
     type = 'text',
@@ -55,6 +55,7 @@ export default function (props: Input) {
     }
     return className
   }
+
   return (
     <div className={initInputClass()} onClick={onClick}>
       {prefix && <span className="rd-input-prefix-icon">{prefix}</span>}
