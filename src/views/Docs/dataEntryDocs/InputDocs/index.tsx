@@ -80,21 +80,21 @@ const addonDemo = () => {
       <div className="rd-row" style={{ width: '65%' }}>
         <WithAddon
           placeholder="mysite"
-          addonBefore="http://"
-          addonAfter=".com"
+          addonbefore="http://"
+          addonafter=".com"
         />
       </div>
 
       <div className="rd-row" style={{ width: '65%' }}>
-        <WithAddon placeholder="mysite" addonBefore="http://" suffix=".com" />
+        <WithAddon placeholder="mysite" addonbefore="http://" suffix=".com" />
       </div>
       <div className="rd-row" style={{ width: '65%' }}>
         <WithAddon
           placeholder="mysite"
-          addonBefore={
+          addonbefore={
             <Select options={['http://', 'https://']} defaultValue="http://" />
           }
-          addonAfter={
+          addonafter={
             <Select options={['.com', '.cn', '.site']} defaultValue=".com" />
           }
         />
@@ -102,7 +102,7 @@ const addonDemo = () => {
       <div className="rd-row" style={{ width: '65%' }}>
         <WithAddon
           placeholder="mysite"
-          addonBefore={
+          addonbefore={
             <div style={{ width: '180px' }}>
               <Select
                 options={['自定义宽度', '适于过长的选项']}
@@ -115,7 +115,7 @@ const addonDemo = () => {
       <div className="rd-row" style={{ width: '65%' }}>
         <WithAddon
           placeholder="mysite"
-          addonAfter={
+          addonafter={
             <span
               className="iconfont icon-set"
               style={{ fontSize: '20px' }}
@@ -126,13 +126,13 @@ const addonDemo = () => {
       <div className="rd-row" style={{ width: '65%' }}>
         <WithAddon
           placeholder="mysite"
-          addonAfter={<Button type="success">Search</Button>}
+          addonafter={<Button type="success">Search</Button>}
         />
       </div>
       <div className="rd-row" style={{ width: '65%' }}>
         <WithAddon
           placeholder="mysite"
-          addonAfter={
+          addonafter={
             <Button type="success">
               <span className="iconfont icon-sousuo"></span>
             </Button>
@@ -153,21 +153,21 @@ const addonDemo = () => {
       <div className="rd-row" style={{ width: '65%' }}>
         <WithAddon
           placeholder="mysite"
-          addonBefore="http://"
-          addonAfter=".com"
+          addonbefore="http://"
+          addonafter=".com"
         />
       </div>
 
       <div className="rd-row" style={{ width: '65%' }}>
-        <WithAddon placeholder="mysite" addonBefore="http://" suffix=".com" />
+        <WithAddon placeholder="mysite" addonbefore="http://" suffix=".com" />
       </div>
       <div className="rd-row" style={{ width: '65%' }}>
         <WithAddon
           placeholder="mysite"
-          addonBefore={
+          addonbefore={
             <Select options={['http://', 'https://']} defaultValue="http://" />
           }
-          addonAfter={
+          addonafter={
             <Select options={['.com', '.cn', '.site']} defaultValue=".com" />
           }
         />
@@ -175,7 +175,7 @@ const addonDemo = () => {
       <div className="rd-row" style={{ width: '65%' }}>
         <WithAddon
           placeholder="mysite"
-          addonBefore={
+          addonbefore={
             <div style={{ width: '180px' }}>
               <Select
                 options={['自定义宽度', '适于过长的选项']}
@@ -188,7 +188,7 @@ const addonDemo = () => {
       <div className="rd-row" style={{ width: '65%' }}>
         <WithAddon
           placeholder="mysite"
-          addonAfter={
+          addonafter={
             <span
               className="iconfont icon-set"
               style={{ fontSize: '20px' }}
@@ -199,13 +199,13 @@ const addonDemo = () => {
       <div className="rd-row" style={{ width: '65%' }}>
         <WithAddon
           placeholder="mysite"
-          addonAfter={<Button type="success">Search</Button>}
+          addonafter={<Button type="success">Search</Button>}
         />
       </div>
       <div className="rd-row" style={{ width: '65%' }}>
         <WithAddon
           placeholder="mysite"
-          addonAfter={
+          addonafter={
             <Button type="success">
               <span className="iconfont icon-sousuo"></span>
             </Button>
@@ -236,8 +236,8 @@ const Api = () => {
 const Api2 = () => {
   const thead = ['属性', '说明', '类型', '默认值']
   const tbody = [
-    ['addonBefore', '设置前置插件', 'string|ReactNode', '无'],
-    ['addonAfter', '设置后置插件', 'string|ReactNode', '无'],
+    ['addonbefore', '设置前置插件', 'string|ReactNode', '无'],
+    ['addonafter', '设置后置插件', 'string|ReactNode', '无'],
   ]
   return <Table thead={thead} tbody={tbody}></Table>
 }

@@ -1,26 +1,31 @@
 import React, { ReactNode, JSXElementConstructor } from 'react'
-import { InputProps } from '../Input'
+
 import './InputWithAddon.less'
-interface InputWithAddonProps extends InputProps {
-  addonBefore?: string | ReactNode
-  addonAfter?: string | ReactNode
+
+interface InputWithAddon {
+  addonbefore?: string | ReactNode
+  addonafter?: string | ReactNode
 }
-export function InputWithAddon(Comp: JSXElementConstructor<InputProps>) {
-  return (props: InputWithAddonProps) => {
-    const { addonAfter, addonBefore, ...res } = props
+
+export function InputWithAddon<T>(Comp: JSXElementConstructor<T>) {
+  //我需要 给 泛型 T 添加 额外的 props 用到了 &
+  return (props: InputWithAddon & T) => {
+    //const { addonAfter, addonBefore, ...res } = props
+    const { addonafter, addonbefore } = props
     return (
       <div className="rd-input-addon">
-        {addonBefore ? (
+        {addonbefore ? (
           <div className="rd-input-addon-item rd-input-addon-before">
-            {addonBefore}
+            {addonbefore}
           </div>
         ) : null}
         <div className="rd-input-addon-wrapper">
-          <Comp {...res} />
+          {/*  <Comp {...res} /> */}
+          <Comp {...props} />
         </div>
-        {addonAfter ? (
+        {addonafter ? (
           <div className="rd-input-addon-item rd-input-addon-after">
-            {addonAfter}
+            {addonafter}
           </div>
         ) : null}
       </div>
