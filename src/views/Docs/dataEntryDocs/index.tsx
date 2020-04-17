@@ -5,5 +5,13 @@ const InputDocs = React.lazy(() => import('./InputDocs'))
 const SelectDocs = React.lazy(() => import('./SelectDocs'))
 const CascaderDocs = React.lazy(() => import('./CascaderDocs'))
 const AutoCompleteDocs = React.lazy(() => import('./AutoCompleteDocs'))
+const UploadDocs = React.lazy(() => import('./UploadDocs'))
 
-export { RateDocs, InputDocs, SelectDocs, CascaderDocs, AutoCompleteDocs }
+export {
+  RateDocs,
+  InputDocs,
+  SelectDocs,
+  CascaderDocs,
+  AutoCompleteDocs,
+  UploadDocs,
+}

@@ -32,6 +32,11 @@ const sidebarGroup = [
         text: 'AutoComplete',
         chineseText: '自动完成',
       },
+      {
+        url: '/docs/upload',
+        text: 'Upload',
+        chineseText: '上传',
+      },
     ],
 
     title: '数据录入',

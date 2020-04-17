@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "14095219",
+      "name": "文件夹打开",
+      "font_class": "wenjianjiadakai",
+      "unicode": "e76d",
+      "unicode_decimal": 59245
+    },
+    {
+      "icon_id": "14095236",
+      "name": "减",
+      "font_class": "jian",
+      "unicode": "e774",
+      "unicode_decimal": 59252
+    },
+    {
+      "icon_id": "14095246",
+      "name": "加",
+      "font_class": "jia",
+      "unicode": "e779",
+      "unicode_decimal": 59257
+    },
+    {
+      "icon_id": "14095257",
+      "name": "导入",
+      "font_class": "daoru",
+      "unicode": "e77d",
+      "unicode_decimal": 59261
+    },
+    {
+      "icon_id": "14095261",
+      "name": "日志",
+      "font_class": "rizhi",
+      "unicode": "e77f",
+      "unicode_decimal": 59263
+    },
+    {
+      "icon_id": "14095276",
+      "name": "图片",
+      "font_class": "tupian",
+      "unicode": "e784",
+      "unicode_decimal": 59268
+    },
+    {
       "icon_id": "11474313",
       "name": "Not visible",
       "font_class": "Notvisible",

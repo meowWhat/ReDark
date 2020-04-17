@@ -24,6 +24,7 @@ import {
   Select,
   Cascader,
   AutoComplete,
+  Upload,
 } from './dataEntry'
 
 export {
@@ -51,4 +52,5 @@ export {
   Select,
   Cascader,
   AutoComplete,
+  Upload,
 }

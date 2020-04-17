@@ -18,17 +18,20 @@ marked.setOptions({
 
 export default function (props: { text: string }) {
   let el = useRef<any>()
-  const getMarked = useMemo(() => {
+
+  const getMarked = useMemo(() => { 
     let text = `\`\`\`javascript
     ${props.text}
 \`\`\``
     return marked(text)
   }, [props.text])
+
   useEffect(() => {
     if (el.current) {
       el.current.innerHTML = getMarked
     }
   }, [getMarked, el])
+
   const copy = () => {
     const input = document.createElement('input')
     document.body.appendChild(input)

@@ -5,10 +5,10 @@ import getIcon from 'src/util/getIconClass'
 
 /* message 容器 */
 interface Message {
-  notices: Array<Notice>
+  notices: Array<NoticeProps>
   [key: string]: any
 }
-export default function (props: Message) {
+export function Message(props: Message) {
   const { notices, ...res } = props
   return (
     <div className="rd-message" {...res}>
@@ -19,7 +19,7 @@ export default function (props: Message) {
   )
 }
 
-interface Notice {
+export interface NoticeProps {
   delay?: number
   text?: string
   type?: 'success' | 'error' | 'warning' | 'info' | 'loading'
@@ -29,9 +29,9 @@ interface Notice {
 }
 
 /* message实体 */
-const Noitce = (props: Notice) => {
+const Noitce = (props: NoticeProps) => {
   const {
-    delay = 3000,
+    delay = 1000,
     text = '',
     type = 'success',
     isShow = true,
