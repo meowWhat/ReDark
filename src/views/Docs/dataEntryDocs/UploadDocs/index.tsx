@@ -5,8 +5,11 @@ import { Upload, Alert } from 'src/UI'
 export default function () {
   return (
     <>
-      <h2>Select 选择器</h2>
-      <p>下拉选择器。</p>
+      <h2>Upload 文件上传</h2>
+      <p>
+        组件需要与后端配合使用,想获取成功的演示结果,请将服务器端代码COPY 在
+        本地开启对应服务 ！！
+      </p>
       <DemoBox
         title="基础使用"
         desp="设置上传接口,与请求方式,服务器会接受到rdFiles:{File}"
@@ -34,7 +37,6 @@ export default function () {
     </>
   )
 }
-
 /* basic */
 const basicDemo = () => {
   return (

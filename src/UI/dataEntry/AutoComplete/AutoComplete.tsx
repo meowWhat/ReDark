@@ -52,7 +52,7 @@ export function AutoComplete(props: AutoCompleteProps & InputProps) {
           return (
             <li
               key={index + el}
-              onClick={() => {
+              onMouseDown={() => {
                 setValue(el)
                 setModalActive(false)
                 onChange && onChange(el)

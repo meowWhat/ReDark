@@ -109,7 +109,7 @@ export default function (props: Select) {
   //控制select的 value
   const [values, setValues] = useState<Array<string>>([''])
   //控制select active 的index
-  const [actIndexs, setActIndexs] = useState<Array<number>>([-1])
+  const [actIndexs, setActIndexs] = useState<Array<number>>([])
 
   useEffect(() => {
     setValue(getRightdefaultValue(setActIndex))
@@ -181,6 +181,7 @@ export default function (props: Select) {
     })
     setActIndexs((pre) => {
       pre.splice(index, 1)
+
       return Array.from(pre)
     })
   }

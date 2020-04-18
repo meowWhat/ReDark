@@ -6,6 +6,7 @@ const SelectDocs = React.lazy(() => import('./SelectDocs'))
 const CascaderDocs = React.lazy(() => import('./CascaderDocs'))
 const AutoCompleteDocs = React.lazy(() => import('./AutoCompleteDocs'))
 const UploadDocs = React.lazy(() => import('./UploadDocs'))
+const FormRuleDocs = React.lazy(() => import('./FormRuleDocs'))
 
 export {
   RateDocs,
@@ -14,4 +15,5 @@ export {
   CascaderDocs,
   AutoCompleteDocs,
   UploadDocs,
+  FormRuleDocs,
 }

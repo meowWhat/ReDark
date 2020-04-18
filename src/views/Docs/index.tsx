@@ -37,6 +37,11 @@ const sidebarGroup = [
         text: 'Upload',
         chineseText: '上传',
       },
+      {
+        url: '/docs/formrule',
+        text: 'FormRule',
+        chineseText: '表单验证',
+      },
     ],
 
     title: '数据录入',

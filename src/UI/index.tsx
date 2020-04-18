@@ -25,6 +25,7 @@ import {
   Cascader,
   AutoComplete,
   Upload,
+  FormRule,
 } from './dataEntry'
 
 export {
@@ -53,4 +54,5 @@ export {
   Cascader,
   AutoComplete,
   Upload,
+  FormRule,
 }

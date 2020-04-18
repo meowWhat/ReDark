@@ -142,6 +142,9 @@ const multipleDemo = () => {
           defaultValues={['黄金糕', '龙须面']}
           tagType={['geekblue', 'lime', 'purple', 'default']}
           optionsDisabledarr={[4]}
+          onChange={(value) => {
+            console.log(value)
+          }}
         />
       </div>
       <div className="rd-row" style={{ width: '85%' }}>
