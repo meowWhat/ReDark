@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Route, withRouter, RouteComponentProps } from 'react-router-dom'
-import { Nav, Home, Docs } from './views'
+import {
+  Route,
+  withRouter,
+  RouteComponentProps,
+  Switch,
+} from 'react-router-dom'
+import { Nav, Home, Docs, NotFound } from './views'
 import { Progress } from './components'
 import { debounce } from './util/debounce'
 import { BackTop } from './UI'
@@ -55,14 +60,17 @@ function App(props: RouteComponentProps) {
     <>
       {/* 导航 */}
       <Nav nav={navItems} siteName="ReDark" />
-      {/* 主页 */}
-      <Route path="/" exact>
-        <Home img={homeImg} />
-      </Route>
-      {/* 文档 */}
-      <Route path="/docs" component={Docs}></Route>
-      {/* 进度条控制 */}
-      <Progress flag={flag}></Progress>
+      <Switch>
+        {/* 主页 */}
+        <Route path="/" exact>
+          <Home img={homeImg} />
+        </Route>
+        {/* 文档 */}
+        <Route path="/docs" component={Docs} />
+        {/* 404 */}
+        <Route path="/" component={NotFound} />
+      </Switch>
+      <Progress flag={flag} />
       {/* 回到顶部 */}
       <BackTop />
     </>

@@ -111,7 +111,7 @@ const RouteRender = () => {
             )
           })}
         </Suspense>
-        <Route path="/docs">
+        <Route path="/docs" exact>
           <Redirect to="/docs/button" />
         </Route>
       </section>

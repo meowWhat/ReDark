@@ -27,4 +27,49 @@
   .nav-item-active {
     border-bottom: 3px solid #46bd87;
   }
+  .navbar-media {
+    display: none;
+    &:hover {
+      border-bottom: 0;
+    }
+  }
+}
+/* 适配 */
+@media screen and (max-width: 760px) {
+  .navbar {
+    .nav-items {
+      margin-top: 50px;
+      background-color: #fff;
+      width: 20%;
+      min-width: 60px;
+      float: right;
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      .nav-item {
+        flex: 1;
+        margin: 0;
+      }
+      .nav-item:hover {
+        border: 0;
+        color: #46bd87;
+      }
+      .nav-item-active {
+        border: 0;
+      }
+    }
+    .navbar-media {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      .icon-jia {
+        font-size: 26px;
+        cursor: pointer;
+      }
+    }
+    .nav-items-hide {
+      display: none;
+    }
+  }
 }
