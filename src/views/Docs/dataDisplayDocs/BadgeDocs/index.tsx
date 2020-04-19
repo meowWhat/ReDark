@@ -52,7 +52,7 @@ const BasicDemo = () => {
 }
 const BasicDemoCode = () => {
   return Marked({
-    text: `import { Badge, Button } from 'src/UI'
+    text: `import { Badge, Button } from '@rd'
 
   const BasicDemo = () => {
       return (
@@ -130,7 +130,7 @@ const ControlDemo = () => {
 }
 const ControlDemoCoded = () => {
   return Marked({
-    text: `import { Badge, Button, ButtonGroup, Tag, Switch } from 'src/UI'
+    text: `import { Badge, Button, ButtonGroup, Tag, Switch } from '@rd'
 
     const ControlDemo = () => {
       const [count, setCount] = useState(5)

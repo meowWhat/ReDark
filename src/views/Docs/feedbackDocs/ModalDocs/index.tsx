@@ -98,7 +98,7 @@ const ModalDemo = () => {
 }
 const ModalDemoCode = () => {
   return Marked({
-    text: `import { Modal, Button } from 'src/UI'
+    text: `import { Modal, Button } from '@rd'
 
     const ModalDemo = () => {
       const [basicFlag, setBasicFlag] = useState(false)

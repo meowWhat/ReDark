@@ -16,15 +16,19 @@ marked.setOptions({
   },
 })
 
-export default function (props: { text: string }) {
+export default function (props: {
+  text: string
+  copy?: boolean
+  type?: string
+}) {
   let el = useRef<any>()
 
-  const getMarked = useMemo(() => { 
-    let text = `\`\`\`javascript
+  const getMarked = useMemo(() => {
+    let text = `\`\`\`${props.type || 'javascript'}
     ${props.text}
 \`\`\``
     return marked(text)
-  }, [props.text])
+  }, [props.text, props.type])
 
   useEffect(() => {
     if (el.current) {
@@ -45,9 +49,11 @@ export default function (props: { text: string }) {
   return (
     <>
       <div ref={el}></div>
-      <span className="iconfont icon-plus-copy copy" onClick={copy}>
-        &nbsp;复制
-      </span>
+      {props.copy ? (
+        <span className="iconfont icon-plus-copy copy" onClick={copy}>
+          &nbsp;复制
+        </span>
+      ) : null}
     </>
   )
 }

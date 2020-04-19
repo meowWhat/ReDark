@@ -91,7 +91,7 @@ const BasicDemo = () => {
 }
 const basicDemoCode = () => {
   return Marked({
-    text: `import { FormRule, Input, Button } from 'src/UI'
+    text: `import { FormRule, Input, Button } from '@rd'
     const RuleInput = FormRule.WithRule(Input)
     const BasicDemo = () => {
       const [value, setValue] = useState('')
@@ -173,7 +173,7 @@ const customRuleDemo = () => {
 }
 const customRuleDemoCode = () => {
   return Marked({
-    text: `import { FormRule, Input } from 'src/UI'
+    text: `import { FormRule, Input } from '@rd'
     const RuleInput = FormRule.WithRule(Input)
     const customRuleDemo = () => {
     return (

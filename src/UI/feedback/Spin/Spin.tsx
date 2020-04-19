@@ -11,7 +11,7 @@ interface Spin {
   [key: string]: any
 }
 
-export default function(props: Spin) {
+export default function (props: Spin) {
   const {
     spinning = false,
     size = 'default',

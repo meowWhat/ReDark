@@ -144,7 +144,7 @@ const addonDemo = () => {
 }
 const addonDemoCode = () => {
   return Marked({
-    text: `import { Input, InputWithAddon, Select } from 'src/UI'
+    text: `import { Input, InputWithAddon, Select } from '@rd'
     /* addon */
 const WithAddon = InputWithAddon(Input)
 const addonDemo = () => {

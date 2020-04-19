@@ -70,7 +70,7 @@ const basicDemo = () => {
 }
 const basicDemoCode = () => {
   return Marked({
-    text: `  import { Rate, Tag } from 'src/UI'
+    text: `  import { Rate, Tag } from '@rd'
     const basicDemo = () => {
       return (
         <>

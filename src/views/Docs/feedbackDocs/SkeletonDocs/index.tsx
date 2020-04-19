@@ -50,7 +50,7 @@ export default function () {
         desp="使用 loading 控制骨架屏的显示与隐藏"
         Components={SkeletonShowDemo()}
         Code={Marked({
-          text: `   import {Skeleton , Switch} from 'src/UI'
+          text: `   import {Skeleton , Switch} from '@rd'
 
           const SkeletonShow = () => {
             const [loading, setLoading] = useState(true)
@@ -236,7 +236,7 @@ const SkeletonDemoCode = () => {
       ButtonGroup,
       Button,
       Switch,
-    } from 'src/UI'
+    } from '@rd'
 
     const SkeletonDemo = () => {
       // avatar state

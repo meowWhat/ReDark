@@ -70,7 +70,7 @@ const BasicDemo = () => {
 }
 const basicDemoCode = () => {
   return Marked({
-    text: `import { AutoComplete, InputWithAddon, Button } from 'src/UI'
+    text: `import { AutoComplete, InputWithAddon, Button } from '@rd'
     const Addon = InputWithAddon(AutoComplete)
     const BasicDemo = () => {
       const [options, setOptions] = useState<Array<string>>([])

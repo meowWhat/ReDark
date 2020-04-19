@@ -17,7 +17,7 @@ export default function Home(props: { img: { src: string; alt: string } }) {
         <h1 className="home-title">ReDark</h1>
         <p className="home-description">React 驱动的 UI 组件库</p>
         <p className="home-description">
-          <Link to="/docs">
+          <Link to="/guide">
             <Button type="success" size="large">
               快速上手
             </Button>
