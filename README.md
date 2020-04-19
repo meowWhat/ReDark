@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://jiahao.site/">
-    <img width="200" src="./src/redark/basic/img/logo.png">
+    <img width="200" src="./src/basic/img/logo.png">
   </a>
 </p>
 
