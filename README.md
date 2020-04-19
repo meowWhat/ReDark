@@ -2,7 +2,7 @@
 
 > 一个 react 驱动 UI 组件库。 帮助你快速开发前端界面。
 
-前往官网 [http://jiahao.site/](http://jiahao.site/) 获取 DOCS
+前往官网 [http://www.jiahao.site/](http://www.jiahao.site/) 获取 DOCS
 
 ## Getting Started 使用指南
 
