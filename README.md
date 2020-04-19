@@ -1,44 +1,51 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ReDark
 
-## Available Scripts
+> 一个 react 驱动 UI 组件库。 帮助你快速开发前端界面。
 
-In the project directory, you can run:
+前往官网 [http://jiahao.site/](http://jiahao.site/) 获取 DOCS
 
-### `yarn start`
+## Getting Started 使用指南
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Prerequisites 项目使用条件
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+请确保你的电脑安装过 Node.js 并且 Node.js 的版本大于 8.
 
-### `yarn test`
+### Installation 安装
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+# 安装
+yarn global add redark-cli # 或者：npm install -g redark-cli
 
-### `yarn build`
+# 使用cli创建项目
+redark-cli create  demo
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# 安装项目依赖
+cd ./demo  &&  yarn
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+# 开启服务器 ,看见hello world
+yarn start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Usage example 使用示例
 
-### `yarn eject`
+```javascript
+import React from 'react'
+import ReactDOM from 'react-dom'
+// 导入 redark
+import { Button } from '@rd'
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+// 使用
+ReactDOM.render(<Button>Hello World</Button>, document.querySelector('#root'))
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployment 部署方法
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+yarn build
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## License 授权协议
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+这个项目 MIT 协议， 请点击 [LICENSE.md](LICENSE.md) 了解更多细节。
