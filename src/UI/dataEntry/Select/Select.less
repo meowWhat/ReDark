@@ -1,0 +1,137 @@
+.rd-select {
+  min-width: 100px;
+  position: relative;
+  width: 100%;
+  .icon-cl-icon-down {
+    display: inline-block;
+    transition: all 0.3s;
+  }
+  .rd-select-down-default {
+    transform: rotate(0);
+  }
+  .rd-select-down-rotate {
+    transform: rotate(180deg);
+  }
+  input {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+    &:hover {
+      cursor: pointer;
+      border-color: #46bd87;
+    }
+  }
+
+  .rd-select-modal {
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    overflow-y: scroll;
+    max-height: 274px;
+    background-color: #fff;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-top: 6px;
+    border: 1px solid #ddd;
+    /* 设置滚动条的样式 */
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+    /* 滚动槽 */
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+    }
+    /* 滚动条滑块 */
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    &::-webkit-scrollbar-thumb:window-inactive {
+      background: rgba(255, 0, 0, 0.4);
+    }
+
+    li {
+      position: relative;
+      cursor: pointer;
+      font-size: inherit;
+      padding: 12px 12px;
+      color: #606266;
+      transition: padding 0.3s;
+      &:hover {
+        background-color: #f0fbf5;
+        color: #3eaf7c;
+      }
+      span {
+        position: absolute;
+        right: 9px;
+      }
+    }
+    .rd-select-modal-active {
+      background-color: #f0fbf5;
+      color: #3eaf7c;
+    }
+    .rd-select-modal-disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      &:hover {
+        background-color: #fff;
+        color: #606266;
+      }
+    }
+  }
+  .rd-select-modal-close {
+    li {
+      padding: 0 12px;
+    }
+    visibility: hidden;
+  }
+
+  /* 多选类型 */
+  .rd-select-multiple {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #dcdfe6;
+    padding: 8px 12px 2px 12px;
+    min-height: 49px;
+    &:hover {
+      cursor: pointer;
+      border-color: #46bd87;
+    }
+    .rd-tag {
+      border: 0;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+    .rd-select-multiple-placeholder {
+      font-size: 14px;
+      color: #d7d7d7;
+    }
+    .rd-select-multiple-icon {
+      position: absolute;
+      right: 10px;
+      top: 12px;
+    }
+  }
+  .rd-select-multiple-disabled {
+    &:hover {
+      cursor: not-allowed;
+      border-color: #ddd;
+    }
+    .rd-tag {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.rd-select-disabled {
+  opacity: 0.4;
+  input:hover {
+    cursor: not-allowed;
+    border-color: #ddd;
+  }
+  .icon-cl-icon-down {
+    cursor: not-allowed;
+  }
+  .icon-roundclose {
+    cursor: not-allowed;
+  }
+}

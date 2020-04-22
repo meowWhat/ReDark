@@ -1,0 +1,68 @@
+@media (max-width: 1150px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+}
+
+@media (max-width: 1440px) {
+  .sidebar {
+    width: 14rem !important;
+  }
+}
+
+.sidebar {
+  transition: transform 0.2s ease;
+  position: fixed;
+  font-size: 16px;
+  background-color: #fff;
+  width: 20rem;
+  z-index: 21;
+  margin: 0;
+  top: 3.6rem;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  border-right: 1px solid #eaecef;
+  padding: 25px 0;
+  overflow-y: scroll;
+  /* 设置滚动条的样式 */
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+  &:hover {
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+    /* 滚动槽 */
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+    }
+    /* 滚动条滑块 */
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    &::-webkit-scrollbar-thumb:window-inactive {
+      background: rgba(255, 0, 0, 0.4);
+    }
+  }
+}
+.sidebar-active {
+  transform: translateX(0);
+}
+.sidebar-icon-default {
+  z-index: 20;
+  transition: transform 0.3s;
+  cursor: pointer;
+  position: fixed;
+  left: 0;
+  top: 65px;
+  font-size: 36px !important;
+  color: #3eaf7c;
+  background-color: #fff;
+  font-weight: 800 !important;
+}
+
+.sidebar-icon-active {
+  transform: translateX(240px) rotate(180deg);
+}

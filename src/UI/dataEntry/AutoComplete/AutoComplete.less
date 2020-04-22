@@ -1,0 +1,56 @@
+.rd-auto-complete {
+  position: relative;
+  width: 100%;
+  line-height: 38px;
+  .rd-select-modal {
+    position: absolute;
+    z-index: 20;
+    width: 100%;
+    overflow-y: scroll;
+    max-height: 274px;
+    background-color: #fff;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-top: 6px;
+    border: 1px solid #ddd;
+    /* 设置滚动条的样式 */
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+    /* 滚动槽 */
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+    }
+    /* 滚动条滑块 */
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    &::-webkit-scrollbar-thumb:window-inactive {
+      background: rgba(255, 0, 0, 0.4);
+    }
+
+    li {
+      position: relative;
+      cursor: pointer;
+      font-size: inherit;
+      padding: 12px 12px;
+      color: #606266;
+      transition: padding 0.3s;
+      &:hover {
+        background-color: #f0fbf5;
+        color: #3eaf7c;
+      }
+      span {
+        position: absolute;
+        right: 9px;
+      }
+    }
+  }
+  .rd-select-modal-close {
+    li {
+      padding: 0 12px;
+    }
+    visibility: hidden;
+  }
+}

@@ -1,0 +1,36 @@
+.rd-carousel {
+  position: relative;
+  overflow: hidden;
+  .rd-carousel-content {
+    transition: transform 0.3s;
+    * {
+      float: left;
+    }
+  }
+  .rd-carousel-pointer {
+    position: absolute;
+    left: 50%;
+    bottom: 12%;
+    transform: translateX(-50%);
+    display: flex;
+    width: 40%;
+    height: 4px;
+    .rd-carousel-pointer-active {
+      opacity: 1;
+    }
+    li {
+      cursor: pointer;
+      transition: background-color 0.3s;
+      flex: 1;
+      background: #fff;
+      opacity: 0.3;
+      margin-right: 10px;
+      &:last-child {
+        margin: 0;
+      }
+      &:hover {
+        background-color: #fff;
+      }
+    }
+  }
+}

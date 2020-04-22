@@ -1,0 +1,121 @@
+.rd-spin {
+  display: none;
+  color: #3eaf7c;
+  .rd-spin-dot {
+    position: relative;
+    z-index: 99;
+    display: block;
+    margin: 0 auto;
+    width: 20px;
+    height: 20px;
+    animation: rdRotate 1.2s linear 0s infinite normal;
+    @keyframes rdRotate {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    .rd-spin-dot-item {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #3eaf7c;
+      &:nth-child(1) {
+        left: 0;
+        top: 0;
+      }
+      &:nth-child(2) {
+        right: 0;
+        top: 0;
+      }
+      &:nth-child(3) {
+        left: 0;
+        bottom: 0;
+        opacity: 0.7;
+      }
+      &:nth-child(4) {
+        right: 0;
+        bottom: 0;
+        opacity: 0.5;
+      }
+    }
+  }
+  .rd-spin-text {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+  }
+}
+
+.rd-spin-spinning {
+  display: inline-block;
+}
+
+/* simple */
+.rd-spin-simple {
+  .rd-spin-dot {
+    width: 25px;
+    height: 25px;
+    border: 1.2px solid transparent;
+    border-left-color: #3eaf7c;
+    border-radius: 50%;
+    .rd-spin-dot-item {
+      display: none;
+    }
+  }
+}
+
+/* size color 属性支持 */
+.rd-spin-large {
+  .rd-spin-dot {
+    width: 30px;
+    height: 30px;
+    .rd-spin-dot-item {
+      width: 12px;
+      height: 12px;
+    }
+  }
+  .rd-spin-text {
+    margin-top: 12px;
+    font-size: 14px;
+  }
+}
+.rd-spin-small {
+  .rd-spin-dot {
+    width: 15px;
+    height: 15px;
+    .rd-spin-dot-item {
+      width: 6px;
+      height: 6px;
+    }
+  }
+  .rd-spin-text {
+    font-size: 8px;
+  }
+}
+
+/* children 样式 */
+
+.rd-spin-childshow {
+  opacity: 0.5;
+}
+
+.rd-spin-child {
+  position: relative;
+
+  .rd-spin {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .rd-spin-childhid {
+    opacity: 0.15;
+  }
+  .rd-spin-childshow {
+    opacity: 1;
+  }
+}

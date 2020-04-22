@@ -1,0 +1,51 @@
+.rd-switch {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid #dcdfe6;
+  border-color: #409eff;
+  background-color: #409eff;
+
+  cursor: pointer;
+  transition: border-color 0.3s, background-color 0.3s;
+  vertical-align: middle;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    border-radius: 100%;
+    transition: all 0.3s;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    left: 100%;
+    margin-left: -17px;
+  }
+}
+
+.rd-switch-colorful {
+  background: #13ce66;
+  border-color: #13ce66;
+}
+.rd-switch-colorful-close {
+  background: #ff4949;
+  border-color: rgb(255, 73, 73);
+  &::after {
+    left: 17px;
+  }
+}
+
+.rd-switch-close {
+  background: #dcdfe6;
+  border-color: #dcdfe6;
+  &::after {
+    left: 17px;
+  }
+}
+
+.rd-switch-disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
